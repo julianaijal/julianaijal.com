@@ -10,12 +10,15 @@ const Hero = () => {
           <h1 className={styles.title}>Hi, I’m Julian, Web developer.</h1>
         </div>
         <Image
-          alt="julian "
-          width="564"
-          height="516"
+          alt="julian aijal"
           src={myIllustration}
+          priority={true}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
         />
-        <div></div>
       </section>
     </>
   );

@@ -1,6 +1,6 @@
-import styles from '../../styles/Hero.module.scss';
+import styles from '../styles/Hero.module.scss';
 import Image from 'next/image';
-import myIllustration from '../../public/assets/julian.svg';
+import myIllustration from '../public/assets/julian.svg';
 
 const Hero = () => {
   return (

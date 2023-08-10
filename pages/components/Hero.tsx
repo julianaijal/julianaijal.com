@@ -1,4 +1,4 @@
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/Hero.module.scss';
 const Hero = () => {
   return (
     <h1 className={styles.title}>

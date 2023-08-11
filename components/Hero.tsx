@@ -7,7 +7,7 @@ const Hero = () => {
     <>
       <section className={styles.HeroGrid}>
         <div className={styles.Hero__cta}>
-          <h1 className={styles.title}>Hi, I’m Julian, Web developer.</h1>
+          <h1 className={styles.title}>Hi, I’m <span className={styles.name}>Julian</span>,<br/>Web developer.</h1>
         </div>
         <div className={styles.Hero__visual}>
           <Image

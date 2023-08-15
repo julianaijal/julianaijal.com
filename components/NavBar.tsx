@@ -19,7 +19,7 @@ const NavBar = () => {
       </div>
       <div className={styles.nav__menu}>
         <ul className={styles.nav__list}>
-          <li className={styles.nav__listItem}>
+          <li className={styles.nav__item}>
             <Link href="mailto:hello@julianaijal.com">Ping me!</Link>
           </li>
         </ul>

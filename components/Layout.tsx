@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.scss';
-import { Hero, NavBar } from '../components';
+import { Hero, NavBar, Footer } from '../components';
 
 const Layout = () => {
   return (
@@ -8,6 +8,7 @@ const Layout = () => {
       <main className={styles.main}>
         <Hero />
       </main>
+      <Footer />
     </>
   );
 };

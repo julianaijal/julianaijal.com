@@ -1,9 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-import { Hero } from '../components';
 import appConfig from '../config/app.config';
 import Analytics from '../lib/Analytics';
+import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
   return (
@@ -18,9 +17,7 @@ const Home: NextPage = () => {
           />
         )}
       </Head>
-      <main className={styles.main}>
-        <Hero />
-      </main>
+      <Layout />
     </>
   );
 };

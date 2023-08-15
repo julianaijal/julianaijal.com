@@ -1,3 +1,22 @@
 .nav {
+  display: flex;
+  height: 80px;
+  padding: 1.5rem 9.75rem;
 
+  @media screen and (max-width: 767px) {
+    padding: 1.5rem;
+  }
+
+  &__logo {
+  }
+
+  &__menu {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+  }
 }

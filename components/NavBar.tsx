@@ -5,8 +5,8 @@ import myLogo from '../public/assets/julian-aijal-logo.svg';
 const NavBar = () => {
   return (
     <>
-      <nav>
-        <div>
+      <nav className={styles.nav}>
+        <div className={styles.nav__logo}>
           <Image
             alt="julian aijal"
             src={myLogo}
@@ -17,11 +17,9 @@ const NavBar = () => {
             }}
           />
         </div>
-        <div>
-          <ul className={styles.nav}>
-            <li>lorem ipsum</li>
-            <li>lorem ipsum</li>
-            <li>lorem ipsum</li>
+        <div className={styles.nav__menu}>
+          <ul className={styles.nav__list}>
+            <li>Ping me!</li>
           </ul>
         </div>
       </nav>

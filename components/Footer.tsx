@@ -37,36 +37,44 @@ const Footer = () => {
       <div className={styles.footer__social}>
         <ul className={styles.footer__socialList}>
           <li className={styles.footer__socialItem}>
-            <Image
-              alt="julian aijal"
-              src={github}
-              sizes="100vw"
-              style={{ width: '100%', height: '2rem' }}
-            />
+            <Link rel="noopener" href="https://github.com/julianaijal">
+              <Image
+                alt="julian aijal"
+                src={github}
+                sizes="100vw"
+                style={{ width: '100%', height: '2rem' }}
+              />
+            </Link>
           </li>
           <li className={styles.footer__socialItem}>
-            <Image
-              alt="julian aijal"
-              src={linkedin}
-              sizes="100vw"
-              style={{ width: '100%', height: '2rem' }}
-            />
+            <Link rel="noopener" href="https://www.linkedin.com/in/jaijal/">
+              <Image
+                alt="julian aijal"
+                src={linkedin}
+                sizes="100vw"
+                style={{ width: '100%', height: '2rem' }}
+              />
+            </Link>
           </li>
           <li className={styles.footer__socialItem}>
-            <Image
-              alt="julian aijal"
-              src={twitter}
-              sizes="100vw"
-              style={{ width: '100%', height: '2rem' }}
-            />
+            <Link rel="noopener" href="https://twitter.com/Jaijal">
+              <Image
+                alt="julian aijal"
+                src={twitter}
+                sizes="100vw"
+                style={{ width: '100%', height: '2rem' }}
+              />
+            </Link>
           </li>
           <li className={styles.footer__socialItem}>
-            <Image
-              alt="julian aijal"
-              src={instagram}
-              sizes="100vw"
-              style={{ width: '100%', height: '2rem' }}
-            />
+            <Link rel="noopener" href="https://instagram.com/julian.aijal">
+              <Image
+                alt="julian aijal"
+                src={instagram}
+                sizes="100vw"
+                style={{ width: '100%', height: '2rem' }}
+              />
+            </Link>
           </li>
         </ul>
       </div>

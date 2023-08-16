@@ -1,6 +1,6 @@
 import styles from './../styles/Footer.module.scss';
 import Logo from '../public/assets/julian-aijal-logo.svg';
-import  Icon from '../public/assets/envelope.svg';
+import Icon from '../public/assets/icons/envelope.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__contact}>
-      <Image
+        <Image
           alt="julian aijal"
           src={Icon}
           sizes="100vw"
@@ -17,7 +17,7 @@ const Footer = () => {
             height: '2rem',
           }}
         />
-      <Link href="mailto:hello@julianaijal.com">Ping me!</Link>
+        <Link href="mailto:hello@julianaijal.com">Ping me!</Link>
       </div>
       <div className={styles.footer__logo}>
         <Image

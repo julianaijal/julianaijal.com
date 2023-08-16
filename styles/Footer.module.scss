@@ -18,17 +18,26 @@
     }
   }
   &__logo {
+    padding: 1rem 0;
+
+    @media screen and (max-width: 767px) {
+      margin-right: auto;
+    }
   }
   &__social {
     &List {
       float: right;
       list-style-type: none;
       display: flex;
+      @media screen and (max-width: 767px) {
+        padding: 0;
+        float: unset;
+      }
     }
     &Item {
       &:not(:first-child) {
         padding-left: 1rem;
-    }
+      }
     }
   }
 }

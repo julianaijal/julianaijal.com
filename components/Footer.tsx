@@ -1,5 +1,5 @@
 import styles from './../styles/Footer.module.scss';
-import myLogo from '../public/assets/julian-aijal-logo.svg';
+import Logo from '../public/assets/julian-aijal-logo.svg';
 import  Icon from '../public/assets/envelope.svg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,7 +22,7 @@ const Footer = () => {
       <div className={styles.footer__logo}>
         <Image
           alt="julian aijal"
-          src={myLogo}
+          src={Logo}
           sizes="100vw"
           style={{
             width: '100%',

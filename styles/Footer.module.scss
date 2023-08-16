@@ -20,5 +20,15 @@
   &__logo {
   }
   &__social {
+    &List {
+      float: right;
+      list-style-type: none;
+      display: flex;
+    }
+    &Item {
+      &:not(:first-child) {
+        padding-left: 1rem;
+    }
+    }
   }
 }

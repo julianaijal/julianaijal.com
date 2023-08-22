@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.scss';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import {
   ArticleList,
   ArticleSlider,
@@ -8,6 +9,7 @@ import {
 } from './';
 
 const Layout = () => {
+  const { width, height } = useWindowDimensions();
   return (
     <>
       <NavBar />
@@ -16,6 +18,8 @@ const Layout = () => {
           <ArticleList />
           <ArticleSlider />
       </main>
+      <p>Screen width: {width}px</p>
+      <p>Screen height: {height}px</p>
       <Footer />
     </>
   );

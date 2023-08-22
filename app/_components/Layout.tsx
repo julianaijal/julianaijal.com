@@ -9,17 +9,15 @@ import {
 } from './';
 
 const Layout = () => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
+  const breakpoint = 768;
   return (
     <>
       <NavBar />
       <main className={styles.main}>
         <Hero />
-          <ArticleList />
-          <ArticleSlider />
+        {width < breakpoint ? <ArticleSlider /> : <ArticleList />}
       </main>
-      <p>Screen width: {width}px</p>
-      <p>Screen height: {height}px</p>
       <Footer />
     </>
   );

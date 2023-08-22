@@ -1,5 +1,11 @@
 import styles from '../styles/Home.module.scss';
-import { Hero, NavBar, Footer } from '.';
+import {
+  ArticleList,
+  ArticleSlider,
+  Hero,
+  NavBar,
+  Footer,
+} from './';
 
 const Layout = () => {
   return (
@@ -7,6 +13,8 @@ const Layout = () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
+          <ArticleList />
+          <ArticleSlider />
       </main>
       <Footer />
     </>

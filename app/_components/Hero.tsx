@@ -1,7 +1,7 @@
 import styles from '../styles/Hero.module.scss';
 import Image from 'next/image';
-import myIllustration from '../public/assets/julian.svg';
-import { Button } from '../components';
+import myIllustration from '../../public/assets/julian.svg';
+import { Button } from '.';
 
 const Hero = () => {
   return (

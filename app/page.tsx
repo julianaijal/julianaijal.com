@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import appConfig from '../config/app.config';
-import Analytics from '../lib/Analytics';
-import Layout from '../components/Layout';
+import Analytics from '../app/_lib/Analytics';
+import Layout from './_components/Layout';
 
 const Home: NextPage = () => {
   return (

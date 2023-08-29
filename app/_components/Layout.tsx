@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.scss';
-import { Hero, NavBar, Footer } from '../components';
+import { Hero, NavBar, Footer } from '.';
 
 const Layout = () => {
   return (

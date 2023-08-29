@@ -4,7 +4,8 @@ const ArticleList = () => {
     <>
       <section className={styles.ArticleList}>
         <div className={styles.ArticleListCta}>
-          <p>cta</p>
+          <h2 className={styles.ArticleListCtaHeading}>Articles</h2>
+          <p className={styles.ArticleListCtaCopy}>Some articles I have written</p>
         </div>
         <div className={styles.ArticleListEntries}>
           <p>list</p>

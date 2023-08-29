@@ -3,10 +3,21 @@
   grid-template-columns: 1fr 2fr;
 
   &Cta {
-    
+    letter-spacing: -0.01em;
+
+    &Heading {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+    }
+    &Copy {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+    }
   }
 
   &Entries {
-    
   }
 }

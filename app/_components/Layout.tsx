@@ -17,7 +17,7 @@ const Layout = () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
-        {width < breakpoint ? <ArticleSlider /> : <ArticleList />}
+        {width! < breakpoint ? <ArticleSlider /> : <ArticleList />}
       </main>
       <Footer />
     </>

@@ -9,6 +9,14 @@ datasource db {
   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
+model ExternalPost {
+  id        String     @default(cuid()) @id
+  title     String
+  subtitle  String
+  image     String?
+  cta       String
+  url       String
+}
 
 model Post {
   id        String     @default(cuid()) @id

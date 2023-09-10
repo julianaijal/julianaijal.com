@@ -1,15 +1,7 @@
 import styles from '../styles/ArticleList.module.scss';
-interface ArticleListProps {
-  articles: {
-    id: string;
-    title: string;
-    subtitle?: string;
-    image?: string | null;
-    cta: string;
-    url: string;
-  }[];
-}
-const ArticleList: React.FC<ArticleListProps> = ({ articles }) => {
+import {IArticles} from './_interfaces/interfaces';
+
+const ArticleList: React.FC<IArticles> = ({ articles }) => {
   return (
     <>
       <section className={styles.ArticleList}>

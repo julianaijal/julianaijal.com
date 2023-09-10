@@ -1,17 +1,7 @@
 import styles from '../styles/ArticleSlider.module.scss';
+import { IArticles } from './_interfaces/interfaces';
 
-interface ArticleSlideProps {
-  articles: {
-    id: string;
-    title: string;
-    subtitle?: string;
-    image?: string | null;
-    cta: string;
-    url: string;
-  }[];
-}
-
-const ArticleSlider: React.FC<ArticleSlideProps> = ({articles}) => {
+const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
   console.log(articles);
   return (
     <>

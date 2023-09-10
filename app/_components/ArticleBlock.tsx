@@ -1,19 +1,9 @@
 'use client';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { ArticleList, ArticleSlider } from './';
+import { IArticles } from './_interfaces/interfaces';
 
-interface ArticleBlockProps {
-  articles: {
-    id: string;
-    title: string;
-    subtitle?: string;
-    image?: string | null; // Make 'image' optional here
-    cta: string;
-    url: string;
-  }[];
-}
-
-const ArticleBlock: React.FC<ArticleBlockProps> = ({ articles }) => {
+const ArticleBlock: React.FC<IArticles> = ({ articles }) => {
   const { width } = useWindowDimensions();
   const breakpoint = 768;
   return (

@@ -4,8 +4,8 @@ interface ArticleSlideProps {
   articles: {
     id: string;
     title: string;
-    substitle?: string;
-    image?: string;
+    subtitle?: string;
+    image?: string | null;
     cta: string;
     url: string;
   }[];

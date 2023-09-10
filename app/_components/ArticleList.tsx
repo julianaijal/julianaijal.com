@@ -23,8 +23,8 @@ const ArticleList: React.FC<IArticles> = ({ articles }) => {
                       alt={article.title}
                       src={`/assets/icons/${article.image}.svg`}
                       sizes="100vw"
-                      width={16}
-                      height={16}
+                      width={48}
+                      height={48}
                     />
                   </div>
                   <h3 className={styles.ArticleListItemTitle}>

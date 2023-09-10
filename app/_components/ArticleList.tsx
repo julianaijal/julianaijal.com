@@ -18,11 +18,11 @@ const ArticleList: React.FC<IArticles> = ({ articles }) => {
               <li key={index}>
                 <div className={styles.ArticleListItem}>
                   <div className={styles.ArticleListItemImage}>
-                    <Image alt="" src="" sizes="100vw" width={16} height={16} />
+                    <Image alt="" src="../../public/assets/julian-aijal-logo.svg" sizes="100vw" width={16} height={16} />
                   </div>
                   <p className={styles.ArticleListItemTitle}>{article.title}</p>
                   <div className={styles.ArticleListItemCta}>
-                    <p>{article.cta}</p>
+                    <p className={styles.ArticleListItemLink}>{article.cta}</p>
                   </div>
                 </div>
               </li>

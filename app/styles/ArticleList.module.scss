@@ -42,9 +42,25 @@
     }
 
     &Cta {
-      p {
-        color: black;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 95px;
+      border-radius: 3px;
+      border: 1px;
+      gap: 12px;
+      border: 1px solid rgba(111, 57, 255, 1);
+      background-color: rgba(111, 57, 255, 0.15);
+    }
+
+    &Link {
+      color: rgba(111, 57, 255, 1);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      text-align: center;
     }
   }
 }

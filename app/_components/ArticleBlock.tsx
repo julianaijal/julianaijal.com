@@ -9,7 +9,9 @@ const ArticleBlock: React.FC<IArticles> = ({ articles }) => {
   return (
     <>
       {width! < breakpoint ? (
-        <ArticleSlider articles={articles} />
+        // commented out this ternary. Uncomment when element is done
+        // <ArticleSlider articles={articles} />
+        ''
       ) : (
         <ArticleList articles={articles} />
       )}

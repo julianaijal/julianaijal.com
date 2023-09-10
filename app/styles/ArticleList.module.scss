@@ -1,0 +1,76 @@
+.ArticleList {
+  padding: 6rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  &Cta {
+    letter-spacing: -0.01em;
+
+    &Heading {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+    }
+    &Copy {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+    }
+  }
+
+  &Entries {
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &Item {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    list-style-type: none;
+    background-color: white;
+    padding: 24px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(111, 57, 255, 1);
+    border-radius: 6px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(111, 57, 255, 0),
+      rgb(200 226 254)
+    );
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    &Title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: -0.01em;
+      color: black;
+      margin: unset;
+    }
+
+    &Cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 95px;
+      border-radius: 3px;
+      border: 1px;
+      gap: 12px;
+      border: 1px solid rgba(111, 57, 255, 1);
+      background-color: rgba(111, 57, 255, 0.15);
+    }
+
+    &Link {
+      color: rgba(111, 57, 255, 1);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+  }
+}

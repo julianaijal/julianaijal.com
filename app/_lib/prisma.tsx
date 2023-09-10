@@ -1,18 +1,22 @@
 import { PrismaClient } from '@prisma/client';
 
-let prisma: PrismaClient;
+const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
-declare global {
-  var prisma: PrismaClient | any;
-}
+export const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    log: ['query'],
+  });
 
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient();
-} else {
-  if (!global.prisma) {
-    global.prisma = new PrismaClient();
+if (process.env.NODE_ENV != 'production') globalForPrisma.prisma;
+
+export const getArticleLinks = async () => {
+  try {
+    return await prisma.externalPost.findMany({});
+  } catch (error) {
+    console.error('Error retrieving items from Prisma:', error);
+    return [];
   }
-  prisma = global.prisma;
-}
+};
 
 export default prisma;

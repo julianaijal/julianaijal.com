@@ -1,12 +1,15 @@
 import styles from '../styles/Home.module.scss';
-import { Hero, NavBar, Footer } from '.';
+import { ArticleBlock, Hero, NavBar, Footer } from './';
+import { getArticleLinks } from './../_lib/prisma';
 
-const Layout = () => {
+const Layout = async () => {
+  let articles = await getArticleLinks();
   return (
     <>
       <NavBar />
       <main className={styles.main}>
         <Hero />
+        <ArticleBlock articles={articles} />
       </main>
       <Footer />
     </>

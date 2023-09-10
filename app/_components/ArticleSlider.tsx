@@ -11,8 +11,15 @@ interface ArticleSlideProps {
   }[];
 }
 
-const ArticleSlider: React.FC<ArticleSlideProps> = (articles) => {
-  return <h2 className={styles.heading}>Article Slider</h2>;
+const ArticleSlider: React.FC<ArticleSlideProps> = ({articles}) => {
+  console.log(articles);
+  return (
+    <>
+      {articles.map((article, index) => (
+        <li key={index}>{article.title}</li>
+      ))}
+    </>
+  );
 };
 
 export default ArticleSlider;

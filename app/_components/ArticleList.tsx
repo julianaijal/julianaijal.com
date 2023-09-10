@@ -21,7 +21,7 @@ const ArticleList: React.FC<IArticles> = ({ articles }) => {
                   <div className={styles.ArticleListItemImage}>
                     <Image alt="" src="../../public/assets/julian-aijal-logo.svg" sizes="100vw" width={16} height={16} />
                   </div>
-                  <p className={styles.ArticleListItemTitle}>{article.title}</p>
+                  <h3 className={styles.ArticleListItemTitle}>{article.title}</h3>
                   <div className={styles.ArticleListItemCta}>
                     <Link rel="noopener" href={article.url} className={styles.ArticleListItemLink}>{article.cta}</Link>
                   </div>

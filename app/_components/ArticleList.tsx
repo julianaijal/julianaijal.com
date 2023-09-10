@@ -1,6 +1,7 @@
 import styles from '../styles/ArticleList.module.scss';
 import { IArticles } from './_interfaces/interfaces';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ArticleList: React.FC<IArticles> = ({ articles }) => {
   return (
@@ -22,7 +23,7 @@ const ArticleList: React.FC<IArticles> = ({ articles }) => {
                   </div>
                   <p className={styles.ArticleListItemTitle}>{article.title}</p>
                   <div className={styles.ArticleListItemCta}>
-                    <p className={styles.ArticleListItemLink}>{article.cta}</p>
+                    <Link rel="noopener" href={article.url} className={styles.ArticleListItemLink}>{article.cta}</Link>
                   </div>
                 </div>
               </li>

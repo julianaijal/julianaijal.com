@@ -19,5 +19,26 @@
   }
 
   &Entries {
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &Item {
+    list-style-type: none;
+    background-color: white;
+    padding: 24px;
+    margin-bottom: 1rem;
+
+    &Title {
+      color: black;
+      gap: 4px;
+    }
+
+    &Cta {
+      p {
+        color: black;
+      }
+    }
   }
 }

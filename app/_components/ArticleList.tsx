@@ -1,5 +1,6 @@
 import styles from '../styles/ArticleList.module.scss';
-import {IArticles} from './_interfaces/interfaces';
+import { IArticles } from './_interfaces/interfaces';
+import Image from 'next/image';
 
 const ArticleList: React.FC<IArticles> = ({ articles }) => {
   return (
@@ -14,7 +15,17 @@ const ArticleList: React.FC<IArticles> = ({ articles }) => {
         <div className={styles.ArticleListEntries}>
           <ul>
             {articles.map((article, index) => (
-              <li key={index}>{article.title}</li>
+              <li key={index}>
+                <div className={styles.ArticleListItem}>
+                  <div className={styles.ArticleListItemImage}>
+                    <Image alt="" src="" sizes="100vw" width={16} height={16} />
+                  </div>
+                  <p className={styles.ArticleListItemTitle}>{article.title}</p>
+                  <div className={styles.ArticleListItemCta}>
+                    <p>{article.cta}</p>
+                  </div>
+                </div>
+              </li>
             ))}
           </ul>
         </div>

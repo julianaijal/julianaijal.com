@@ -25,6 +25,8 @@
   }
 
   &Item {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
     list-style-type: none;
     background-color: white;
     padding: 24px;

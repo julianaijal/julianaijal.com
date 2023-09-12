@@ -41,7 +41,7 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
               </div>
             </div>
             <div className={styles.ArticleSliderCardCopy}>
-              <h2>{article.title}</h2>
+              <h3 className={styles.ArticleSliderCardTitle}>{article.title}</h3>
             </div>
           </div>
         ))}

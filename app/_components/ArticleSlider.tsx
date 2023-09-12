@@ -12,11 +12,11 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
         </p>
       </div>
       <div className={styles.ArticleSliderEntries}>
-        <ul>
-          {articles.map((article, index) => (
-            <li key={index}>{article.title}</li>
-          ))}
-        </ul>
+        {articles.map((article, index) => (
+          <div className={styles.ArticleSliderCard} key={index}>
+            <p className={styles.ArticleSliderCardTitle}>{article.title}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

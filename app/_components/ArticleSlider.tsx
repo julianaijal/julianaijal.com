@@ -15,33 +15,37 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
       </div>
       <div className={styles.ArticleSliderEntries}>
         {articles.map((article, index) => (
-          <div className={styles.ArticleSliderCard} key={index}>
-            <div className={styles.ArticleSliderCardCta}>
-              <div className={styles.ArticleSliderCardImg}>
-                {' '}
-                <Image
-                  alt={article.title}
-                  src={`/assets/icons/${article.image}.svg`}
-                  sizes="100vw"
-                  width={48}
-                  height={48}
-                />
-              </div>
-              <div className={styles.ArticleSliderCardBtnWrapper}>
-                <div className={styles.ArticleSliderCardBtn}>
+          <div className={styles.ArticleSliderEntry} key={index}>
+            <div className={styles.ArticleSliderCard}>
+              <div className={styles.ArticleSliderCardCta}>
+                <div className={styles.ArticleSliderCardImg}>
                   {' '}
-                  <Link
-                    rel="noopener"
-                    href={article.url}
-                    className={styles.ArticleSliderCardLink}
-                  >
-                    {article.cta}
-                  </Link>
+                  <Image
+                    alt={article.title}
+                    src={`/assets/icons/${article.image}.svg`}
+                    sizes="100vw"
+                    width={48}
+                    height={48}
+                  />
+                </div>
+                <div className={styles.ArticleSliderCardBtnWrapper}>
+                  <div className={styles.ArticleSliderCardBtn}>
+                    {' '}
+                    <Link
+                      rel="noopener"
+                      href={article.url}
+                      className={styles.ArticleSliderCardLink}
+                    >
+                      {article.cta}
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={styles.ArticleSliderCardCopy}>
-              <h3 className={styles.ArticleSliderCardTitle}>{article.title}</h3>
+              <div className={styles.ArticleSliderCardCopy}>
+                <h3 className={styles.ArticleSliderCardTitle}>
+                  {article.title}
+                </h3>
+              </div>
             </div>
           </div>
         ))}

@@ -27,12 +27,12 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
                   height={48}
                 />
               </div>
-              <div className={styles.ArticleSliderCardBt}>
+              <div className={styles.ArticleSliderCardBtn}>
                 {' '}
                 <Link
                   rel="noopener"
                   href={article.url}
-                  className={styles.ArticleListItemLink}
+                  className={styles.ArticleSliderCardLink}
                 >
                   {article.cta}
                 </Link>

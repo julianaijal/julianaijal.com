@@ -1,3 +1,11 @@
-.heading {
-  color: purple;
+.ArticleSlider {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+
+  &Cta {
+    &Heading {
+    }
+    &Copy {
+    }
+  }
 }

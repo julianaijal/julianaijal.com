@@ -17,20 +17,26 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
         {articles.map((article, index) => (
           <div className={styles.ArticleSliderCard} key={index}>
             <div className={styles.ArticleSliderCardCta}>
-              <Image
-                alt={article.title}
-                src={`/assets/icons/${article.image}.svg`}
-                sizes="100vw"
-                width={48}
-                height={48}
-              />
-              <Link
-                rel="noopener"
-                href={article.url}
-                className={styles.ArticleListItemLink}
-              >
-                {article.cta}
-              </Link>
+              <div className={styles.ArticleSliderCardImg}>
+                {' '}
+                <Image
+                  alt={article.title}
+                  src={`/assets/icons/${article.image}.svg`}
+                  sizes="100vw"
+                  width={48}
+                  height={48}
+                />
+              </div>
+              <div className={styles.ArticleSliderCardBt}>
+                {' '}
+                <Link
+                  rel="noopener"
+                  href={article.url}
+                  className={styles.ArticleListItemLink}
+                >
+                  {article.cta}
+                </Link>
+              </div>
             </div>
             <div className={styles.ArticleSliderCardCopy}>
               <h2>{article.title}</h2>

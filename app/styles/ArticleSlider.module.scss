@@ -20,6 +20,9 @@
   }
 
   &Card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     background-color: white;
     width: 330px;
     height: 254px;

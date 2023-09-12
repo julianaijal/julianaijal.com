@@ -27,15 +27,17 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
                   height={48}
                 />
               </div>
-              <div className={styles.ArticleSliderCardBtn}>
-                {' '}
-                <Link
-                  rel="noopener"
-                  href={article.url}
-                  className={styles.ArticleSliderCardLink}
-                >
-                  {article.cta}
-                </Link>
+              <div className={styles.ArticleSliderCardBtnWrapper}>
+                <div className={styles.ArticleSliderCardBtn}>
+                  {' '}
+                  <Link
+                    rel="noopener"
+                    href={article.url}
+                    className={styles.ArticleSliderCardLink}
+                  >
+                    {article.cta}
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={styles.ArticleSliderCardCopy}>

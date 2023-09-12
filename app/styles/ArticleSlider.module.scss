@@ -43,6 +43,11 @@
       grid-row: 1 / 2;
     }
 
+    &BtnWrapper {
+      display: flex;
+      justify-content: right;
+    }
+
     &Btn {
       display: flex;
       align-items: center;

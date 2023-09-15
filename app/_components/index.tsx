@@ -1,17 +1,8 @@
-import ArticleBlock from './ArticleBlock';
-import ArticleList from './ArticleList';
-import ArticleSlider from './ArticleSlider';
-import Button from './Button';
-import Footer from './Footer';
-import Hero from './Hero';
-import NavBar from './NavBar';
-import Showcase from './Showcase';
-
-export { ArticleBlock };
-export { ArticleList };
-export { ArticleSlider };
-export { Button };
-export { Footer };
-export { Hero };
-export { NavBar };
-export { Showcase };
+export { default as ArticleBlock } from './ArticleBlock';
+export { default as ArticleList } from './ArticleList';
+export { default as ArticleSlider } from './ArticleSlider';
+export { default as Button } from './Button';
+export { default as Footer } from './Footer';
+export { default as Hero } from './Hero';
+export { default as NavBar } from './NavBar';
+export { default as Showcase } from './Showcase';

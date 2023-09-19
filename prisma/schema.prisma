@@ -18,6 +18,12 @@ model ExternalPost {
   url       String
 }
 
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+}
+
 model Post {
   id        String     @default(cuid()) @id
   title     String
@@ -25,6 +31,7 @@ model Post {
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
+  tags      Tag[]
 }
 
 model User {

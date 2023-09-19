@@ -22,6 +22,7 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
                   {' '}
                   <Image
                     alt={article.title}
+                    // to-do: add / import images properly via prisma
                     src={`/assets/icons/${article.image}.svg`}
                     sizes="100vw"
                     width={48}

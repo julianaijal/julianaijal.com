@@ -1,6 +1,6 @@
 import styles from '../styles/Showcase.module.scss';
 
-const Showcase = () => {
+const Showcase = ({entries}) => {
   return (
     <section>
       <h2>Showcase</h2>

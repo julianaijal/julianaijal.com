@@ -7,11 +7,10 @@ const Showcase: React.FC<IShowcase> = ({ entries }) => {
     <section className={styles.Showcase}>
       <h2 className={styles.ShowcaseTitle}>Some of my work</h2>
       <div className={styles.ShowcaseGrid}>
-      {entries.map((card, i) => (
-        <ShowcaseCard key={i} entries={entries} />
-      ))}
+        {entries.map((card, i) => (
+          <ShowcaseCard key={i} entries={card} /> 
+        ))}
       </div>
-
     </section>
   );
 };

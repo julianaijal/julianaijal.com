@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
-  console.log(articles);
   return (
     <section className={styles.ArticleSlider}>
       <div className={styles.ArticleSliderCta}>

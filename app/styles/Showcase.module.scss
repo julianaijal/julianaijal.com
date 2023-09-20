@@ -4,6 +4,7 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+
   &Title {
     font-size: 40px;
     font-weight: 600;
@@ -13,6 +14,10 @@
   }
 
   &Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
     width: calc(33% - 2rem);
     max-width: 360px;
     height: 280px;
@@ -20,7 +25,12 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
     margin: 1rem;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
   }
+
   @media screen and (max-width: 1080px) {
     &Card {
       width: calc(50% - 2rem);

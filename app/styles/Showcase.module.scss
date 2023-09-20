@@ -25,20 +25,35 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 0.5rem;
     margin: 1rem;
+
     img {
       object-fit: cover;
       width: 100%;
     }
-  }
 
-  @media screen and (max-width: 1080px) {
-    &Card {
+    &Title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: -0.01em;
+      text-align: left;
+    }
+
+    &Cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        width: unset;
+      }
+    }
+
+    @media screen and (max-width: 1080px) {
       width: calc(50% - 2rem);
     }
-  }
 
-  @media screen and (max-width: 720px) {
-    &Card {
+    @media screen and (max-width: 720px) {
       width: calc(100% - 2rem);
       max-width: none;
     }

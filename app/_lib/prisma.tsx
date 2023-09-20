@@ -19,4 +19,14 @@ export const getArticleLinks = async () => {
   }
 };
 
+
+export const getShowcase = async () => {
+  try {
+    return await prisma.post.findMany({});
+  } catch (error) {
+    console.error('Error retrieving items from Prisma:', error);
+    return [];
+  }
+};
+
 export default prisma;

@@ -4,11 +4,10 @@ import styles from '../styles/Hero.module.scss';
 import Image from 'next/image';
 import myIllustration from '../../public/assets/julian.svg';
 import { Button } from '.';
-import useInViewport from '../hooks/useInviewport';
+import useInViewFade from '../hooks/useInViewFade';
 
 const Hero = () => {
-  
-  const { ref, isVisible, targetEl } = useInViewport();
+  const { ref, isVisible, targetEl } = useInViewFade();
 
   return (
     <section className={styles.HeroGrid}>
@@ -22,7 +21,7 @@ const Hero = () => {
             isVisible ? styles.fadeInText : styles.hiddenText
           }`}
         >
-          Hi, I’m <span className={styles.name}>Julian</span>,<br />
+          Hi, I&apos;m <span className={styles.name}>Julian</span>,<br />
           Web developer.
         </h1>
         <Button />

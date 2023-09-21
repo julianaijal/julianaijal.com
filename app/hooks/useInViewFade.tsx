@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState, useRef } from 'react';
 
-const useInViewport = () => {
+const useInViewFade = () => {
   const targetEl = useRef<HTMLHeadingElement | null>(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -18,4 +18,4 @@ const useInViewport = () => {
   return { ref, isVisible, targetEl };
 };
 
-export default useInViewport;
+export default useInViewFade;

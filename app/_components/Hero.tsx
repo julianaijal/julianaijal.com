@@ -13,8 +13,7 @@ const Hero = () => {
   });
 
   const [isVisible, setIsVisible] = useState(false);
-  const h1Ref = useRef(null);
-
+  const h1Ref = useRef<HTMLHeadingElement | null>(null);
   useEffect(() => {
     if (inView) {
       setIsVisible(true);

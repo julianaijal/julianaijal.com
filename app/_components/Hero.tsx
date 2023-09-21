@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/Hero.module.scss';
 import Image from 'next/image';
 import myIllustration from '../../public/assets/julian.svg';
@@ -12,11 +12,12 @@ const Hero = () => {
     threshold: 0.2,
   });
 
+  const [isVisible, setIsVisible] = useState(false);
   const h1Ref = useRef(null);
 
   useEffect(() => {
     if (inView) {
-      h1Ref.current.classList.add(styles.fadeInText);
+      setIsVisible(true);
     }
   }, [inView]);
 
@@ -28,7 +29,7 @@ const Hero = () => {
             ref(el);
             h1Ref.current = el;
           }}
-          className={styles.title}
+          className={`${styles.title} ${isVisible ? styles.fadeInText : styles.hiddenText}`}
         >
           Hi, I’m <span className={styles.name}>Julian</span>,<br />
           Web developer.

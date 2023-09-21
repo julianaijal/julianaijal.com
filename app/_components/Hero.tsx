@@ -7,8 +7,8 @@ import { Button } from '.';
 import useInViewport from '../hooks/useInviewport';
 
 const Hero = () => {
-  const h1Ref = useRef<HTMLHeadingElement | null>(null);
-  const { ref, isVisible } = useInViewport();
+  
+  const { ref, isVisible, targetEl } = useInViewport();
 
   return (
     <section className={styles.HeroGrid}>
@@ -16,7 +16,7 @@ const Hero = () => {
         <h1
           ref={(el) => {
             ref(el);
-            h1Ref.current = el;
+            targetEl.current = el;
           }}
           className={`${styles.title} ${
             isVisible ? styles.fadeInText : styles.hiddenText

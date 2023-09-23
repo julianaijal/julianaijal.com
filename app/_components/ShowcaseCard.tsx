@@ -1,12 +1,9 @@
 import styles from '../styles/Showcase.module.scss';
 import Image from 'next/image';
-interface ShowcaseCardProps {
-  entries: {
-    title: string;
-  };
-}
+import { FC } from 'react';
+import { IShowcaseEntry } from './_interfaces/interfaces';
 
-const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ entries }) => {
+const ShowcaseCard: FC<IShowcaseEntry> = (entries) => {
   return (
     <div className={styles.ShowcaseCard}>
       <div className={styles.ShowcaseCardImg}>

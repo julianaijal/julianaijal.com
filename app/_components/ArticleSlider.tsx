@@ -1,9 +1,10 @@
 import styles from '../styles/ArticleSlider.module.scss';
-import { IArticles } from './_interfaces/interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
+import { IArticles } from './_interfaces/interfaces';
+import { FC } from 'react';
 
-const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
+const ArticleSlider: FC<IArticles> = ({ articles }) => {
   return (
     <section className={styles.ArticleSlider}>
       <div className={styles.ArticleSliderCta}>
@@ -18,10 +19,8 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
             <div className={styles.ArticleSliderCard}>
               <div className={styles.ArticleSliderCardCta}>
                 <div className={styles.ArticleSliderCardImg}>
-                  {' '}
                   <Image
                     alt={article.title}
-                    // to-do: add / import images properly via prisma
                     src={`/assets/icons/${article.image}.svg`}
                     sizes="100vw"
                     width={48}
@@ -30,7 +29,6 @@ const ArticleSlider: React.FC<IArticles> = ({ articles }) => {
                 </div>
                 <div className={styles.ArticleSliderCardBtnWrapper}>
                   <div className={styles.ArticleSliderCardBtn}>
-                    {' '}
                     <Link
                       rel="noopener"
                       href={article.url}

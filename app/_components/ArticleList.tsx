@@ -1,9 +1,8 @@
 import styles from '../styles/ArticleList.module.scss';
 import { IArticles } from './_interfaces/interfaces';
-import Image from 'next/image';
-import Link from 'next/link';
+import ArticleListEntry from './ArticleListEntry';
 
-const ArticleList: React.FC<IArticles> = ({ articles }) => {
+const ArticleList: React.FC<IArticles> = ({ articles}) => {
   return (
     <section className={styles.ArticleList}>
       <div className={styles.ArticleListCta}>
@@ -15,30 +14,7 @@ const ArticleList: React.FC<IArticles> = ({ articles }) => {
       <div className={styles.ArticleListEntries}>
         <ul>
           {articles.map((article, index) => (
-            <li key={index}>
-              <div className={styles.ArticleListItem}>
-                <div className={styles.ArticleListItemImage}>
-                  <Image
-                    alt={article.title}
-                    // to-do: add / import images properly via prisma
-                    src={`/assets/icons/${article.image}.svg`}
-                    sizes="100vw"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-                <h3 className={styles.ArticleListItemTitle}>{article.title}</h3>
-                <div className={styles.ArticleListItemCta}>
-                  <Link
-                    rel="noopener"
-                    href={article.url}
-                    className={styles.ArticleListItemLink}
-                  >
-                    {article.cta}
-                  </Link>
-                </div>
-              </div>
-            </li>
+           <ArticleListEntry key={index} {...article}/>
           ))}
         </ul>
       </div>

@@ -3,6 +3,7 @@ import Head from 'next/head';
 import appConfig from '../config/app.config';
 import Analytics from '../app/_lib/Analytics';
 import Layout from './_components/Layout';
+import Schema from './_lib/Schema';
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +18,8 @@ const Home: NextPage = () => {
           />
         )}
       </Head>
+      {/* To-do:move to head */}
+      <Schema/>
       <Layout />
     </>
   );

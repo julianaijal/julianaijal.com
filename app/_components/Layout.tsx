@@ -12,7 +12,7 @@ const Layout = async () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
-        <Showcase entries={showcaseData} />
+        {/* <Showcase entries={showcaseData} /> */}
         <ArticleBlock articles={articleData} />
       </main>
       <Footer />

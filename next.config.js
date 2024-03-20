@@ -5,10 +5,6 @@ const nextConfig = {
   images: {
     domains: ['placehold.co'],
   },
-  experimental: {
-    appDir: true,
-    serverActions: true,
-  },
 }
 
 module.exports = nextConfig

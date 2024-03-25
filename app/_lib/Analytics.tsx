@@ -10,6 +10,7 @@ const Analytics = ({
         src={`https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`}
       ></script>
       <script
+        type="text/partytown"
         dangerouslySetInnerHTML={{
           __html: `
                 window.dataLayer = window.dataLayer || [];

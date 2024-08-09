@@ -41,7 +41,8 @@ const Layout = async () => {
       <main className={styles.main}>
         <Hero />
         {/* <Showcase entries={showcaseData} /> */}
-        <ArticleBlock articles={articleData} />
+        {/* temp hygraph naming untill everything is migrated to hygraph and prisma can be removed */}
+        <ArticleBlock articles={articleData} hygraph={articlesHygraphData}/>
       </main>
       <Footer />
     </>

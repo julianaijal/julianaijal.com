@@ -1,8 +1,9 @@
 export interface IArticle {
   title: string;
-  image?: string | null;
-  cta: string;
   url: string;
+  image?: string | null;
+  cta?: string;
+  symbol?: string;
 }
 
 export interface IShowcaseEntry {

@@ -2,7 +2,7 @@ import styles from '../styles/ArticleList.module.scss';
 import { IArticles } from './_interfaces/interfaces';
 import ArticleListEntry from './ArticleListEntry';
 
-const ArticleList: React.FC<IArticles> = ({ articles}) => {
+const ArticleList: React.FC<IArticles> = ({ hygraph }) => {
   return (
     <section className={styles.ArticleList}>
       <div className={styles.ArticleListCta}>
@@ -13,7 +13,7 @@ const ArticleList: React.FC<IArticles> = ({ articles}) => {
       </div>
       <div className={styles.ArticleListEntries}>
         <ul>
-          {articles.map((article, index) => (
+          {hygraph.map((article, index) => (
            <ArticleListEntry key={index} {...article}/>
           ))}
         </ul>

@@ -25,7 +25,7 @@ const ArticleListEntry:FC<IArticle> = (article, index ) => {
             href={article.url}
             className={styles.ArticleListItemLink}
           >
-            {article.cta}
+            Read more
           </Link>
         </div>
       </div>

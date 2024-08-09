@@ -2,7 +2,7 @@
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { ArticleList, ArticleSlider } from "./";
 import { IArticles } from "./_interfaces/interfaces";
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 
 const ArticleBlock: FC<IArticles> = ({ articles, hygraph }) => {
   const { width } = useWindowDimensions();

@@ -1,13 +1,13 @@
 import styles from "../styles/Home.module.scss";
 import { ArticleBlock, Hero, NavBar, Footer } from "./";
-import { getShowcase } from "./../_lib/prisma";
+// import { getShowcase } from "./../_lib/prisma";
 import fetchPosts from "../utils/api";
 import { IArticle } from "./_interfaces/interfaces";
 
 const Layout = async () => {
-  const [articlesHygraph, entries] = await Promise.all([
+  const [articlesHygraph] = await Promise.all([
     fetchPosts(),
-    getShowcase(),
+    // getShowcase(),
   ]);
 
   const externalPosts: IArticle[] =
@@ -19,7 +19,7 @@ const Layout = async () => {
       symbol,
     })
   );
-  const showcaseData = entries.map(({ title }) => ({ title }));
+  // const showcaseData = entries.map(({ title }) => ({ title }));
   return (
     <>
       <NavBar />

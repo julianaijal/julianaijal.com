@@ -3,7 +3,9 @@ export interface IArticle {
   url: string;
   image?: string | null;
   cta?: string;
-  symbol?: string;
+  symbol?: {
+    url: string;
+  };
 }
 
 export interface IShowcaseEntry {

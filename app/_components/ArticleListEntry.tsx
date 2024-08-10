@@ -10,7 +10,7 @@ const ArticleListEntry: FC<IArticle> = ({ title, url, symbol }) => {
       <div className={styles.ArticleListItem}>
         <div className={styles.ArticleListItemImage}>
           {symbol?.url && (
-            <img
+            <Image
               alt={title}
               src={symbol.url}
               sizes="100vw"

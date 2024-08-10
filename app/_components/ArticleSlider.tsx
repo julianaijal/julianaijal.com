@@ -20,7 +20,7 @@ const ArticleSlider: FC<IArticles> = ({ hygraph }) => {
               <div className={styles.ArticleSliderCardCta}>
                 <div className={styles.ArticleSliderCardImg}>
                   {article.symbol?.url && (
-                    <img
+                    <Image
                       alt={article.title}
                       src={article.symbol.url}
                       sizes="100vw"

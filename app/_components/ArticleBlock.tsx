@@ -4,16 +4,16 @@ import { ArticleList, ArticleSlider } from "./";
 import { IArticles } from "./_interfaces/interfaces";
 import { FC } from "react";
 
-const ArticleBlock: FC<IArticles> = ({ articles, hygraph }) => {
+const ArticleBlock: FC<IArticles> = ({ articles }) => {
   const { width } = useWindowDimensions();
   const breakpoint = 768;
 
   return (
     <>
       {width! < breakpoint ? (
-        <ArticleSlider hygraph={hygraph} articles={articles} />
+        <ArticleSlider articles={articles} />
       ) : (
-        <ArticleList hygraph={hygraph} articles={articles} />
+        <ArticleList articles={articles} />
       )}
     </>
   );

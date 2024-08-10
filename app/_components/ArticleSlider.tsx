@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { IArticles } from './_interfaces/interfaces';
 import { FC } from 'react';
 
-const ArticleSlider: FC<IArticles> = ({ hygraph }) => {
+const ArticleSlider: FC<IArticles> = ({ articles }) => {
   return (
     <section className={styles.ArticleSlider}>
       <div className={styles.ArticleSliderCta}>
@@ -14,7 +14,7 @@ const ArticleSlider: FC<IArticles> = ({ hygraph }) => {
         </p>
       </div>
       <div className={styles.ArticleSliderEntries}>
-        {hygraph.map((article, index) => (
+        {articles.map((article, index) => (
           <div className={styles.ArticleSliderEntry} key={index}>
             <div className={styles.ArticleSliderCard}>
               <div className={styles.ArticleSliderCardCta}>

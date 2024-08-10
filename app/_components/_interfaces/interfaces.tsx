@@ -14,8 +14,6 @@ export interface IShowcaseEntry {
 
 export interface IArticles {
   articles: IArticle[];
-  // temp naming untill everything is migrated to hygraph and prisma can be removed
-  hygraph: IArticle[];
 }
 
 export interface IShowcase {

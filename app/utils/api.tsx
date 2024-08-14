@@ -1,7 +1,7 @@
 const fetchPosts = async () => {
   try {
     const response = await fetch(
-      `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/${process.env.NEXT_PUBLIC_GRAPHCMS_API_KEY}/master`,
+      `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/${process.env.HYGRAPH_API_KEY}/master`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -7,7 +7,7 @@ const ShowcaseCard: FC<IShowcaseEntry> = (entries) => {
   return (
     <div className={styles.ShowcaseCard}>
       <div className={styles.ShowcaseCardImg}>
-        <img
+        <Image
           alt="julian aijal"
           src="https://placehold.co/600x400?text=kthnxbye"
           height={185}

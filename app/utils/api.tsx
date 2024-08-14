@@ -16,10 +16,20 @@ const fetchPosts = async () => {
         }),
       }
     );
-    if (!response.ok) throw new Error('Network response was not ok');
+
+    if (!response.ok) {
+      console.error('Failed to fetch posts:', response.statusText);
+      throw new Error('Network response was not ok');
+    }
+
     return await response.json();
   } catch (error) {
     console.error('Fetch error:', error);
+
+    if (process.env.NODE_ENV === 'production') {
+      return { data: { externalPostsPluralized: [] } };
+    }
+
     throw error;
   }
 };

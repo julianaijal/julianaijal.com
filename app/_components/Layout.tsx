@@ -1,7 +1,9 @@
+'use server';
 import styles from "../styles/Home.module.scss";
 import { ArticleBlock, Hero, NavBar, Footer } from "./";
 import fetchPosts from "../utils/api";
 import { IArticle } from "./_interfaces/interfaces";
+import { revalidateTag } from 'next/cache';
 
 const Layout = async () => {
   const [articlesHygraph] = await Promise.all([fetchPosts()]);
@@ -29,3 +31,7 @@ const Layout = async () => {
 };
 
 export default Layout;
+
+export async function revalidateArticles() {
+  revalidateTag('external-articles-collection');
+}

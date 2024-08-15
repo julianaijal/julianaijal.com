@@ -4,28 +4,29 @@ import Link from 'next/link';
 import { IArticle } from './_interfaces/interfaces';
 import { FC } from 'react';
 
-const ArticleListEntry:FC<IArticle> = (article, index ) => {
+const ArticleListEntry: FC<IArticle> = ({ title, url, symbol }) => {
   return (
-    <li key={index}>
+    <li>
       <div className={styles.ArticleListItem}>
         <div className={styles.ArticleListItemImage}>
-          <Image
-            alt={article.title}
-            // to-do: add / import images properly via prisma
-            src={`/assets/icons/${article.image}.svg`}
-            sizes="100vw"
-            width={48}
-            height={48}
-          />
+          {symbol?.url && (
+            <Image
+              alt={title}
+              src={symbol.url}
+              sizes="100vw"
+              width={48}
+              height={48}
+            />
+          )}
         </div>
-        <h3 className={styles.ArticleListItemTitle}>{article.title}</h3>
+        <h3 className={styles.ArticleListItemTitle}>{title}</h3>
         <div className={styles.ArticleListItemCta}>
           <Link
             rel="noopener"
-            href={article.url}
+            href={url}
             className={styles.ArticleListItemLink}
           >
-            {article.cta}
+            Read more
           </Link>
         </div>
       </div>

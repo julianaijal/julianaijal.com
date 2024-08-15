@@ -19,13 +19,15 @@ const ArticleSlider: FC<IArticles> = ({ articles }) => {
             <div className={styles.ArticleSliderCard}>
               <div className={styles.ArticleSliderCardCta}>
                 <div className={styles.ArticleSliderCardImg}>
-                  <Image
-                    alt={article.title}
-                    src={`/assets/icons/${article.image}.svg`}
-                    sizes="100vw"
-                    width={48}
-                    height={48}
-                  />
+                  {article.symbol?.url && (
+                    <Image
+                      alt={article.title}
+                      src={article.symbol.url}
+                      sizes="100vw"
+                      width={48}
+                      height={48}
+                    />
+                  )}
                 </div>
                 <div className={styles.ArticleSliderCardBtnWrapper}>
                   <div className={styles.ArticleSliderCardBtn}>
@@ -34,7 +36,7 @@ const ArticleSlider: FC<IArticles> = ({ articles }) => {
                       href={article.url}
                       className={styles.ArticleSliderCardLink}
                     >
-                      {article.cta}
+                      Read more
                     </Link>
                   </div>
                 </div>

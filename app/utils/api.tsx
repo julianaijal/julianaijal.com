@@ -1,32 +1,38 @@
 const fetchPosts = async () => {
+  const api = `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/${process.env.HYGRAPH_API_KEY}/master`;
+
   try {
-    const response = await fetch(
-      `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/${process.env.HYGRAPH_API_KEY}/master`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: `{
-            externalPostsPluralized {
-              title
-              url
-              symbol { url }
-            }
-          }`,
-        }),
-      }
-    );
+    const response = await fetch(api, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `{
+          externalPostsPluralized {
+            title
+            url
+            symbol { url }
+          }
+        }`,
+      }),
+    });
 
     if (!response.ok) {
-      console.error('Failed to fetch posts:', response.statusText);
-      throw new Error('Network response was not ok');
+      console.error("Failed to fetch posts:", response.statusText);
+      throw new Error(`Network response was not ok: ${response.statusText}`);
     }
 
-    return await response.json();
-  } catch (error) {
-    console.error('Fetch error:', error);
+    const data = await response.json();
 
-    if (process.env.NODE_ENV === 'production') {
+    if (!data.data) {
+      console.error("Invalid response format:", data);
+      throw new Error("Invalid response format");
+    }
+
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+
+    if (process.env.NODE_ENV === "production") {
       return { data: { externalPostsPluralized: [] } };
     }
 

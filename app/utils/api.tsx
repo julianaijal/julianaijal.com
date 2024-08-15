@@ -14,7 +14,10 @@ const fetchPosts = async () => {
           }
         }`,
       }),
-      next: { tags: ["external-articles-collection"] },
+      next: {
+        tags: ["external-articles-collection"],
+        revalidate: 21600,
+      },
     });
 
     if (!response.ok) {

@@ -16,7 +16,7 @@ const fetchPosts = async () => {
       }),
       next: {
         tags: ["external-articles-collection"],
-        revalidate: 21600,
+        revalidate: 86400,
       },
     });
 

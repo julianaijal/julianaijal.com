@@ -1,4 +1,5 @@
 'use server';
+
 import styles from "../styles/Home.module.scss";
 import { ArticleBlock, Hero, NavBar, Footer } from "./";
 import fetchPosts from "../utils/api";
@@ -6,17 +7,11 @@ import { IArticle } from "./_interfaces/interfaces";
 import { revalidateTag } from 'next/cache';
 
 const Layout = async () => {
-  const [articlesHygraph] = await Promise.all([fetchPosts()]);
+  const { data } = await fetchPosts();
 
-  const externalPosts: IArticle[] =
-    articlesHygraph?.data?.externalPostsPluralized ?? [];
-  const articlesHygraphData: IArticle[] = externalPosts.map(
-    (post: IArticle) => ({
-      title: post.title,
-      url: post.url,
-      symbol: post.symbol,
-    })
-  );
+  const articlesHygraphData: IArticle[] = data?.externalPostsPluralized?.map(
+    ({ title, url, symbol }: IArticle) => ({ title, url, symbol })
+  ) ?? [];
 
   return (
     <>

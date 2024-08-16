@@ -43,7 +43,7 @@ const Schema = () => {
                    "https://amsterdamcentrum.pvda.nl/wieiswie/julian-aijal/",
                    "https://thenextweb.com/author/julianaijal",
                    "https://www.linkedin.com/in/jaijal/",
-                   "https://twitter.com/Jaijal",
+                   "https://x.com/Jaijal",
                    "https://www.threads.net/@julian.aijal",
                    "https://yourambassadrice.com/author/julian-aijal/",
                    "https://www.bitsoffreedom.nl/mensen/julian-aijal/",

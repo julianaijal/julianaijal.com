@@ -35,8 +35,8 @@ const Footer = () => {
             },
             {
               href: 'https://.com/Jaijal',
-              src: '/assets/icons/twitter.svg',
-              title:'twitter / X',
+              src: '/assets/icons/x.svg',
+              title:'X',
             },
             {
               href: 'https://instagram.com/julian.aijal',

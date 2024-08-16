@@ -1,3 +1,4 @@
+// docs: https://www.npmjs.com/package/sitemap
 const { SitemapStream, streamToPromise, EnumChangefreq } = require("sitemap");
 const { Readable } = require("stream");
 const fs = require("fs");

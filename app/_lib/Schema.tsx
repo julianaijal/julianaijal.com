@@ -181,7 +181,37 @@ const Schema = () => {
                       }
                    }
                 ]
-             }
+             },
+            {
+               "@type": "CreativeWork",
+               "@id": "#KnowledgeGraphArticle",
+               "headline": "What is a knowledge graph and how does one work?",
+               "author": {
+                  "@id": "#Person"
+               },
+               "datePublished": "2019-06-11",
+               "url": "https://thenextweb.com/news/what-is-a-knowledge-graph-and-how-does-one-work"
+            },
+            {
+               "@type": "CreativeWork",
+               "@id": "#SchemaOrgArticle",
+               "headline": "Supporting Schema.org",
+               "author": {
+                  "@id": "#Person"
+               },
+               "datePublished": "2016-07-06",
+               "url": "https://thenextweb.com/news/marketing-tnw-way-13-supporting-schema-org"
+            },
+            {
+               "@type": "CreativeWork",
+               "@id": "#GoogleCloudArticle",
+               "headline": "Running Screaming Frog in the Google Cloud",
+               "author": {
+                  "@id": "#Person"
+               },
+               "datePublished": "2015-12-18",
+               "url": "https://thenextweb.com/news/marketing-the-tnw-way-5-seo-running-screaming-frog-in-the-google-cloud"
+            }
           ]
        }]`,
       }}

@@ -49,7 +49,8 @@ const Schema = () => {
                    "https://www.bitsoffreedom.nl/mensen/julian-aijal/",
                    "https://www.instagram.com/julian.aijal/",
                    "https://github.com/julianaijal",
-                   "https://www.crunchbase.com/person/julian-aijal"
+                   "https://www.crunchbase.com/person/julian-aijal",
+                   "https://substack.com/@julianaijal"
                 ],
                 "knowsAbout":[
                    {

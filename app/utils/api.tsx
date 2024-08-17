@@ -1,4 +1,3 @@
-"use server";
 const fetchPosts = async () => {
   const api = `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/${process.env.HYGRAPH_API_KEY}/master`;
   try {

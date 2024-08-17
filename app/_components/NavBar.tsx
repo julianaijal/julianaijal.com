@@ -3,12 +3,8 @@ import styles from './../styles/Navbar.module.scss';
 import Image from 'next/image';
 import myLogo from '../../public/assets/julian-aijal-logo.svg';
 import Link from 'next/link';
-import { revalidateArticles } from './Layout';
 
 const NavBar = () => {
-const handleRevalidation =  async () =>{
-  await revalidateArticles()
-}
   return (
     <nav className={styles.nav}>
       <div className={styles.nav__logo}>
@@ -28,7 +24,6 @@ const handleRevalidation =  async () =>{
             <Link href="mailto:hello@julianaijal.com">Ping me!</Link>
           </li>
         </ul>
-        <button  onClick={handleRevalidation}>Revalidate articles</button>
       </div>
     </nav>
   );

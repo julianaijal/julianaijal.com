@@ -1,11 +1,19 @@
 'use server';
-import styles from "../styles/Home.module.scss";
-import { ArticleBlock, Hero, NavBar, Footer } from "./";
-import fetchPosts from "../utils/api";
-import { IArticle } from "./_interfaces/interfaces";
+import styles from '../styles/Home.module.scss';
+import { ArticleBlock, Hero, NavBar, Footer } from './';
+import fetchPosts from '../utils/api';
+import { IArticle } from './_interfaces/interfaces';
 import { revalidateTag } from 'next/cache';
+import { redirect } from 'next/navigation';
+import { headers } from 'next/headers';
 
 const Layout = async () => {
+  // Rick roll
+  const referer = headers().get('referer') || '';
+  if (referer.toLowerCase().includes('.php')) {
+    redirect('https://www.youtube.com/watch?v=xvFZjo5PgG0'); // Server-side redirect
+  }
+
   const [articlesHygraph] = await Promise.all([fetchPosts()]);
 
   const externalPosts: IArticle[] =

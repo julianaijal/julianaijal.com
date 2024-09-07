@@ -11,7 +11,7 @@ const Layout = async () => {
   // Rick roll
   const referer = headers().get('referer') || '';
   if (referer.toLowerCase().includes('.php')) {
-    redirect('https://www.youtube.com/watch?v=xvFZjo5PgG0'); // Server-side redirect
+    redirect('https://www.youtube.com/watch?v=xvFZjo5PgG0');
   }
 
   const [articlesHygraph] = await Promise.all([fetchPosts()]);

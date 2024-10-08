@@ -30,7 +30,7 @@ const Schema = () => {
                 "givenName":"Julian",
                 "familyName":"Aijal",
                 "url":"https://julianaijal.com/",
-                "jobTitle":"SEO Specialist",
+                "jobTitle":"Senior SEO Specialist",
                 "birthDate":"1989-11-17",
                 "birthPlace":{
                    "@type":"Place",
@@ -50,8 +50,51 @@ const Schema = () => {
                    "https://www.instagram.com/julian.aijal/",
                    "https://github.com/julianaijal",
                    "https://www.crunchbase.com/person/julian-aijal",
-                   "https://substack.com/@julianaijal"
+                   "https://substack.com/@julianaijal",
+                   "https://www.credential.net/profile/julianaijal489646/wallet"
                 ],
+                  "hasCredential": [
+                     {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "Certification",
+                        "educationalLevel": "Bachelor's degree",
+                        "name": "Bachelor of Business Administration",
+                        "recognizedBy": {
+                           "@type": "Organization",
+                           "name": "Saxion University of Applied Sciences"
+                        }
+                     },
+                     {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "Certification",
+                        "name": "AWS Certified Cloud Practitioner",
+                        "url": "https://www.credly.com/badges/5d779f22-14d2-4f09-a8e7-cb22a0b91570",
+                        "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "Amazon Web Services"
+                        }
+                     },
+                      {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "Certification",
+                        "name": "Datavisualisatie & Storytelling",
+                        "url": "https://www.credential.net/56b85fb5-f822-488c-827a-f92e44a4f914",
+                        "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "Beeckestijn Business School"
+                        }
+                     },
+                     {
+                        "@type": "EducationalOccupationalCredential",
+                        "credentialCategory": "Certification",
+                        "name": "Kritisch kijken naar data",
+                        "url": "https://www.credential.net/caebe40b-33c2-4a62-99f6-53e6e7ee4714",
+                        "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "Beeckestijn Business School"
+                        }
+                     }
+                  ],
                 "knowsAbout":[
                    {
                       "@type":"Service",

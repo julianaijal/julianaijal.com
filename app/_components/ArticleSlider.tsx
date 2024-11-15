@@ -5,7 +5,7 @@ import { IArticles } from './_interfaces/interfaces';
 import { FC } from 'react';
 
 const ArticleSlider: FC<IArticles> = ({ articles }) => {
-  
+  // to do 1: fetch slugs from hygraph entries from parent, deconstruct above (see next comment)
   return (
     <section className={styles.ArticleSlider}>
       <div className={styles.ArticleSliderCta}>
@@ -42,6 +42,7 @@ const ArticleSlider: FC<IArticles> = ({ articles }) => {
                         Read more
                       </Link>
                     </div>
+                    {/* to do 2: and pass here */}
                     <Link href={`/articles/${slug}`} passHref>
                       <button className={styles.ArticleListItemButton}>Go</button>
                     </Link>

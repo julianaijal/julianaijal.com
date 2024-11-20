@@ -1,8 +1,7 @@
-import styles from '../styles/ArticleSlider.module.scss';
-import Image from 'next/image';
-import Link from 'next/link';
-import { IArticles } from './_interfaces/interfaces';
-import { FC } from 'react';
+import styles from "../styles/ArticleSlider.module.scss";
+import { IArticles } from "./_interfaces/interfaces";
+import { FC } from "react";
+import ArticleSliderEntry from "./ArticleSliderEntry";
 
 const ArticleSlider: FC<IArticles> = ({ articles }) => {
   return (
@@ -15,39 +14,12 @@ const ArticleSlider: FC<IArticles> = ({ articles }) => {
       </div>
       <div className={styles.ArticleSliderEntries}>
         {articles.map((article, index) => (
-          <div className={styles.ArticleSliderEntry} key={index}>
-            <div className={styles.ArticleSliderCard}>
-              <div className={styles.ArticleSliderCardCta}>
-                <div className={styles.ArticleSliderCardImg}>
-                  {article.symbol?.url && (
-                    <Image
-                      alt={article.title}
-                      src={article.symbol.url}
-                      sizes="100vw"
-                      width={48}
-                      height={48}
-                    />
-                  )}
-                </div>
-                <div className={styles.ArticleSliderCardBtnWrapper}>
-                  <div className={styles.ArticleSliderCardBtn}>
-                    <Link
-                      rel="noopener"
-                      href={article.url}
-                      className={styles.ArticleSliderCardLink}
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.ArticleSliderCardCopy}>
-                <h3 className={styles.ArticleSliderCardTitle}>
-                  {article.title}
-                </h3>
-              </div>
-            </div>
-          </div>
+          <ArticleSliderEntry
+            key={index}
+            title={article.title}
+            url={article.url}
+            symbol={article.symbol}
+          />
         ))}
       </div>
     </section>

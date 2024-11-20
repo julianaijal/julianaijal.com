@@ -14,11 +14,7 @@ const ArticleSlider: FC<IArticles> = ({ articles }) => {
       </div>
       <div className={styles.ArticleSliderEntries}>
         {articles.map((article, index) => (
-          <ArticleSliderEntry
-            key={index}
-            title={article.title}
-            url={article.url}
-            symbol={article.symbol}
+          <ArticleSliderEntry key={index}{...article}
           />
         ))}
       </div>

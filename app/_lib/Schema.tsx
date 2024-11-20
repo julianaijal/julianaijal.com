@@ -51,8 +51,8 @@ const Schema = () => {
                    "https://github.com/julianaijal",
                    "https://www.crunchbase.com/person/julian-aijal",
                    "https://substack.com/@julianaijal",
-                   "https://www.credential.net/profile/julianaijal489646/wallet"
-                   "https://bsky.app/profile/julianaijal.bsky.social"
+                   "https://www.credential.net/profile/julianaijal489646/wallet",
+                   "https://bsky.app/profile/julianaijal.com"
                 ],
                   "hasCredential": [
                      {

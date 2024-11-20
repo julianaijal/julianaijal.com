@@ -34,7 +34,7 @@ const Footer = () => {
               title:'linkedin',
             },
             {
-              href: 'https://.com/Jaijal',
+              href: 'https://x.com/Jaijal',
               src: '/assets/icons/x.svg',
               title:'X',
             },

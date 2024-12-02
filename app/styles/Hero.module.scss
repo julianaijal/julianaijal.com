@@ -1,6 +1,8 @@
+@import './_variables';
+
 .title {
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: map-get($font-sizes, xxl);
+  font-weight: map-get($font-weights, semibold);
   line-height: 4.4rem;
   letter-spacing: -0.01em;
   text-align: left;
@@ -8,6 +10,8 @@
   a {
     color: #0070f3;
     text-decoration: none;
+    transition: text-decoration 0.2s ease;
+
     &:hover,
     &:focus,
     &:active {
@@ -17,56 +21,60 @@
 }
 
 .name {
-  background: linear-gradient(86.58deg, #6f39ff 32.64%, #35b8fe 60.62%),
-    linear-gradient(0deg, #ffffff, #ffffff);
+  background: linear-gradient(86.58deg, $primary-color 32.64%, #35b8fe 60.62%),
+    linear-gradient(0deg, $white, $white);
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   background-clip: text;
 }
 
 .Hero {
   &Grid {
     display: grid;
+    gap: map-get($spacing, lg);
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: map-get($breakpoints, md) - 1) {
       grid-template-rows: auto;
     }
   }
 
   &__cta {
-    padding: 5rem 0;
-    @media screen and (max-width: 767px) {
-      padding: 1rem 0 2rem 0;
+    padding: map-get($spacing, xxl) 0;
+
+    @media screen and (max-width: map-get($breakpoints, md) - 1) {
+      padding: map-get($spacing, md) 0 map-get($spacing, lg);
       order: 1;
     }
   }
 
   &__visual {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-
-.fadeInText{
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fadeInText {
+  animation: fadeInAnimation 3s ease forwards;
 }
 
 .hiddenText {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 @keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  100% {
-      opacity: 1;
-   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

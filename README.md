@@ -25,7 +25,7 @@ Personal website and blog built with modern web technologies.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/julianaijal.com.git
+git clone https://github.com/julianaijal/julianaijal.com.git
 cd julianaijal.com
 ```
 

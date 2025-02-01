@@ -60,6 +60,13 @@ const fetchArticleBySlug = async (slug: string) => {
       id
       title
       subtitle
+      headerImage {
+        url
+        width
+        height
+      }
+      canonicalReference
+      canonicalLink
       content {
         html
         markdown

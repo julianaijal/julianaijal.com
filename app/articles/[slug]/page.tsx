@@ -23,16 +23,22 @@ const Page = async ({ params }: IArticleDynamic) => {
       <>
         <NavBar />
         <main className={styles.Article}>
-          <h1 className={styles.ArticleTitle}>{data?.title}</h1>
+          <header>
+            <h1 className={styles.ArticleTitle}>{data?.title}</h1>
+          </header>
           {headerImg && (
             <div className={styles.ArticleHeaderImage}>
               <Image  unoptimized width={100} height={100} src={data.headerImage.url} alt={data?.title} />
             </div>
           )}
+          <div className={styles.ArticleWrapper}>
           <article
             className={styles.ArticleContent}
             dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
           />
+          </div>
+
+          
         </main>
         <Footer />
       </>

@@ -28,7 +28,15 @@ const Page = async ({ params }: IArticleDynamic) => {
           </header>
           {headerImg && (
             <div className={styles.ArticleHeaderImage}>
-              <Image  unoptimized width={100} height={100} src={data.headerImage.url} alt={data?.title} />
+              <Image
+                priority
+                quality={95}
+                width={1400}
+                height={800}
+                src={data.headerImage.url}
+                alt={data?.title}
+                className={styles.headerImg}
+              />
             </div>
           )}
           <div className={styles.ArticleWrapper}>

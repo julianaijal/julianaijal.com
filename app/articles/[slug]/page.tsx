@@ -3,12 +3,11 @@ import styles from "../../styles/Article.module.scss";
 import apiFunctions from "../../utils/api";
 import DOMPurify from "dompurify";
 import { JSDOM } from "jsdom";
-import { IArticleDynamic } from "../../_components/_interfaces/interfaces";
 import Image from "next/image";
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const data = await apiFunctions.fetchArticleBySlug(slug);
 
   const metadata: Metadata = {
@@ -25,9 +24,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return metadata;
 }
 
-const Page = async ({ params }: IArticleDynamic) => {
-  const resolvedParams = await params;
-  const slug = resolvedParams.slug;
+const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
 
   try {
     const data = await apiFunctions.fetchArticleBySlug(slug);

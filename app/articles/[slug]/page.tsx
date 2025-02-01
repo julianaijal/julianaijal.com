@@ -33,7 +33,7 @@ const Page = async ({ params }: IArticleDynamic) => {
           )}
           <div className={styles.ArticleWrapper}>
           <article
-            className={styles.ArticleContent}
+            className={`wrapper ${styles.ArticleContent}`}
             dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
           />
           </div>

@@ -1,3 +1,6 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
 html,
 body {
   padding: 0;
@@ -26,19 +29,15 @@ a {
 }
 
 .wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  max-width: 70rem;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 1.5rem;
   
-  @media (min-width: 768px) {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  @include desktop {
+    padding: 4rem;
   }
   
-  @media (min-width: 1024px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  @include large-screen {
+    padding: 2rem;
   }
 }

@@ -1,4 +1,8 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
 .Article {
+
 
   &HeaderImage {
     width: 100%;
@@ -18,9 +22,9 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    text-align: center;
     
-    text-align: center;    
-    @media (min-width: 768px) {
+    @include desktop {
       font-size: 3rem;
     }
   }

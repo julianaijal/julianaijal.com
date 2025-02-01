@@ -1,5 +1,18 @@
 .Article {
- &Title {
-  font-size: 3rem;
- }   
+  &HeaderImage {
+    width: 100%;
+    margin-bottom: 2rem;
+    
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  &Title {
+    font-size: 3rem;
+  }   
 }

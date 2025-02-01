@@ -4,6 +4,7 @@ import apiFunctions from "../../utils/api";
 import DOMPurify from "dompurify";
 import { JSDOM } from "jsdom";
 import { IArticleDynamic } from "../../_components/_interfaces/interfaces";
+import Image from "next/image";
 
 
 const Page = async ({ params }: IArticleDynamic) => {
@@ -13,6 +14,8 @@ const Page = async ({ params }: IArticleDynamic) => {
   try {
     const data = await apiFunctions.fetchArticleBySlug(slug);
     const content = data.content.html;
+    const headerImg = data.headerImage.url;
+    console.log(headerImg)
     const window = new JSDOM("").window;
     const domPurify = DOMPurify(window);
     const sanitizedHtml = domPurify.sanitize(content);
@@ -21,6 +24,11 @@ const Page = async ({ params }: IArticleDynamic) => {
         <NavBar />
         <main className={styles.Article}>
           <h1 className={styles.ArticleTitle}>{data?.title}</h1>
+          {headerImg && (
+            <div className={styles.ArticleHeaderImage}>
+              <Image  unoptimized width={100} height={100} src={data.headerImage.url} alt={data?.title} />
+            </div>
+          )}
           <article
             className={styles.ArticleContent}
             dangerouslySetInnerHTML={{ __html: sanitizedHtml }}

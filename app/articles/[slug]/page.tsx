@@ -5,6 +5,7 @@ import DOMPurify from "dompurify";
 import { JSDOM } from "jsdom";
 import { IArticleDynamic } from "../../_components/_interfaces/interfaces";
 import Image from "next/image";
+import { Metadata } from 'next';
 
 
 const Page = async ({ params }: IArticleDynamic) => {
@@ -40,6 +41,14 @@ const Page = async ({ params }: IArticleDynamic) => {
             </div>
           )}
           <div className={styles.ArticleWrapper}>
+          {data?.canonicalReference && data?.canonicalLink && (
+              <p className={styles.ArticleCanonical}>
+                This article was originally published at{' '}
+                <a href={data.canonicalLink} target="_blank" rel="noopener noreferrer">
+                  {new URL(data.canonicalLink).hostname}
+                </a>
+              </p>
+            )}
           <article
             className={`wrapper ${styles.ArticleContent}`}
             dangerouslySetInnerHTML={{ __html: sanitizedHtml }}

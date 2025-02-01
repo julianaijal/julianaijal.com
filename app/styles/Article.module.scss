@@ -29,11 +29,29 @@
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-align: center;
     
     @include desktop {
       font-size: 3rem;
+    }
+  }
+
+  &Canonical {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    
+    a {
+      color: #3b82f6;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      
+      &:hover {
+        color: #2563eb;
+      }
     }
   }
 

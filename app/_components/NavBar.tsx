@@ -8,15 +8,17 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.nav__logo}>
-        <Image
-          alt="julian aijal"
-          src={myLogo}
-          sizes="100vw"
-          style={{
-            width: '100%',
-            height: '2rem',
-          }}
-        />
+        <Link href="/">
+          <Image
+            alt="julian aijal"
+            src={myLogo}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: '2rem',
+            }}
+          />
+        </Link>
       </div>
       <div className={styles.nav__menu}>
         <ul className={styles.nav__list}>

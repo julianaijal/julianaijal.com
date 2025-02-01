@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  silenceDeprecations: ['legacy-js-api'],
+  sassOptions: {
+    silenceDeprecations: ['legacy-js-api']
+  },
   images: {
     // Use remotePatterns to allow specific external images
     remotePatterns: [

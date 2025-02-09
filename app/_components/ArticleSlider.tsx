@@ -3,9 +3,7 @@ import { IArticles } from "./_interfaces/interfaces";
 import { FC } from "react";
 import ArticleSliderEntry from "./ArticleSliderEntry";
 
-const ArticleSlider: FC<IArticles> = ({ articles, articlesnew }) => {
-  // this won't log because of usedimensionshook
-  console.log(articlesnew, 'slider')
+const ArticleSlider: FC<IArticles> = ({ articlesnew = [] }) => {
   return (
     <section className={styles.ArticleSlider}>
       <div className={styles.ArticleSliderCta}>
@@ -15,8 +13,8 @@ const ArticleSlider: FC<IArticles> = ({ articles, articlesnew }) => {
         </p>
       </div>
       <div className={styles.ArticleSliderEntries}>
-        {articles.map((article, index) => (
-          <ArticleSliderEntry key={index}{...article}
+        {articlesnew.map((article, index) => (
+          <ArticleSliderEntry key={index} {...article}
           />
         ))}
       </div>

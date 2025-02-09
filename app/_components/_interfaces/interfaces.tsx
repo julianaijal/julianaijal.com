@@ -13,6 +13,7 @@ export interface IShowcaseEntry {
   title: string;
 }
 
+// todo: fix props passed to old naming {articles instead of articlesnew}
 export interface IArticles {
   articles: IArticle[];
   articlesnew?:IArticle[];

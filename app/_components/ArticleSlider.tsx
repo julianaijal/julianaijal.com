@@ -3,6 +3,7 @@ import { IArticles } from "./_interfaces/interfaces";
 import { FC } from "react";
 import ArticleSliderEntry from "./ArticleSliderEntry";
 
+{/* todo: fix props passed to old naming {articles instead of articlesnew} */}
 const ArticleSlider: FC<IArticles> = ({ articlesnew = [] }) => {
   return (
     <section className={styles.ArticleSlider}>

@@ -2,6 +2,7 @@ import styles from "../styles/ArticleList.module.scss";
 import { IArticles } from "./_interfaces/interfaces";
 import ArticleListEntry from "./ArticleListEntry";
 
+{/* todo: fix props passed to old naming {articles instead of articlesnew} */}
 const ArticleList: React.FC<IArticles> = ({ articlesnew = [] }) => (
   <section className={styles.ArticleList}>
     <div className={styles.ArticleListCta}>

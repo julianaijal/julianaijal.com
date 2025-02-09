@@ -4,21 +4,16 @@ import Link from "next/link";
 import { IArticle } from "./_interfaces/interfaces";
 import { FC } from "react";
 
-const ArticleSliderEntry: FC<IArticle> = ({ title, slug, symbol }) => {
+const ArticleSliderEntry: FC<IArticle> = ({ title, slug }) => {
   return (
     <div className={styles.ArticleSliderEntry}>
       <div className={styles.ArticleSliderCard}>
         <div className={styles.ArticleSliderCardCta}>
           <div className={styles.ArticleSliderCardImg}>
-            {symbol?.url && (
-              <Image
-                alt={title}
-                src={symbol.url}
-                sizes="100vw"
-                width={48}
-                height={48}
-              />
-            )}
+            {/* Add symbol img in hygraph */}
+            {/* {symbol?.url && ( */}
+              <Image alt={title} src="https://eu-central-1-shared-euc1-02.graphassets.com/clw38qc4e0h4s07waaosde8sy/clw3wfy1r36ak08usvt8aamla" sizes="100vw" width={48} height={48} />
+            {/* )} */}
           </div>
           {slug && (
             <div className={styles.ArticleSliderCardBtnWrapper}>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { IArticle } from "./_interfaces/interfaces";
 import { FC } from "react";
 
-const ArticleSliderEntry: FC<IArticle> = ({ title, url, symbol }) => {
+const ArticleSliderEntry: FC<IArticle> = ({ title, slug, symbol }) => {
   return (
     <div className={styles.ArticleSliderEntry}>
       <div className={styles.ArticleSliderCard}>
@@ -20,12 +20,12 @@ const ArticleSliderEntry: FC<IArticle> = ({ title, url, symbol }) => {
               />
             )}
           </div>
-          {url && (
+          {slug && (
             <div className={styles.ArticleSliderCardBtnWrapper}>
               <div className={styles.ArticleSliderCardBtn}>
                 <Link
                   rel="noopener"
-                  href={url}
+                  href={`/articles/${slug}`}
                   className={styles.ArticleSliderCardLink}
                 >
                   Read more

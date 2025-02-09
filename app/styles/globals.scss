@@ -1,3 +1,6 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
 html,
 body {
   padding: 0;
@@ -22,5 +25,19 @@ a {
   body {
     color: white;
     background: #111827;
+  }
+}
+
+.wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 1.5rem;
+  
+  @include desktop {
+    padding: 4rem;
+  }
+  
+  @include large-screen {
+    padding: 2rem;
   }
 }

@@ -22,8 +22,8 @@ interface SchemaArticleProps {
 
 
 
-const stripHtmlTags = () => {
-  
+const stripHtmlTags = (html: any) => {
+   return html.replace(/<\/?[^>]+(>|$)/g, "");
 };
 
 const SchemaArticle = ({ 

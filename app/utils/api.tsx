@@ -60,6 +60,10 @@ const fetchArticleBySlug = async (slug: string) => {
       id
       title
       subtitle
+      createdBy {
+        id
+        name
+      }
       headerImage {
         url
         width

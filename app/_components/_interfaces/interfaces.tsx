@@ -1,34 +1,48 @@
+/**
+ * Represents an article with metadata
+ */
 export interface IArticle {
   title: string;
   slug: string;
   url: string;
-  image?: string | null;
+  image: string | null;
   cta?: string;
   symbol?: {
     url: string;
   };
 }
 
+/**
+ * Represents a showcase entry
+ */
 export interface IShowcaseEntry {
   title: string;
 }
 
-// todo: fix props passed to old naming {articles instead of articlesnew}
-export interface IArticles {
+/**
+ * Represents a collection of articles
+ */
+export interface IArticleCollection {
   articles: IArticle[];
-  articlesnew?:IArticle[];
 }
 
+/**
+ * Represents a collection of showcase entries
+ */
 export interface IShowcase {
   entries: IShowcaseEntry[];
 }
 
+/**
+ * Represents article schema with rich content and metadata
+ */
 export interface ISchemaArticle {
   title: string;
+  slug: string;
   createdBy?: {
-    id?: string;
-    name?: string;
-  }
+    id: string;
+    name: string;
+  };
   subtitle?: string;
   content?: {
     html: string;
@@ -42,5 +56,4 @@ export interface ISchemaArticle {
   };
   canonicalReference?: string;
   canonicalLink?: string;
-  slug: string;
 }

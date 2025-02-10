@@ -20,6 +20,12 @@ interface SchemaArticleProps {
   slug: string;
 }
 
+
+
+const stripHtmlTags = () => {
+  
+};
+
 const SchemaArticle = ({ 
   title,
   subtitle,
@@ -57,7 +63,7 @@ const SchemaArticle = ({
           "name": title,
           "headline": title,
           "description": subtitle,
-          "articleBody": content?.text,
+          "articleBody": stripHtmlTags(content?.text),
           "image": imageObject,
           "author": authorObject,
           "mainEntityOfPage": {

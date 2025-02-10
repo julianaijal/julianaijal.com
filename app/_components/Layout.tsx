@@ -23,8 +23,7 @@ const Layout = async () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
-        {/* todo: fix props passed to old naming {articles instead of articlesnew} */}
-        <ArticleBlock articles={articlesHygraphData} articlesnew={mappedArticles}/>
+        <ArticleBlock articles={mappedArticles}/>
       </main>
       <Footer />
     </>

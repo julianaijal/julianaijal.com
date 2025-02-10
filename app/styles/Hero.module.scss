@@ -23,6 +23,16 @@
   background-clip: text;
 }
 
+.cursor {
+  font-weight: 100;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .Hero {
   &Grid {
     display: grid;

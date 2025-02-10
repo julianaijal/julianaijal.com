@@ -1,5 +1,9 @@
 interface SchemaArticleProps {
   title: string;
+  createdBy?: {
+    id?: string;
+    name?: string;
+  }
   subtitle?: string;
   content?: {
     html: string;
@@ -22,6 +26,7 @@ const SchemaArticle = ({
   content,
   headerImage,
   canonicalLink,
+  createdBy,
   slug
 }: SchemaArticleProps) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://julianaijal.com';
@@ -36,8 +41,8 @@ const SchemaArticle = ({
 
   const authorObject = {
     "@type": "Person",
-    "name": "Julian Aijal",
-    "url": baseUrl
+    "name": createdBy?.name,
+    "url": baseUrl,
   };
 
   return (
@@ -61,7 +66,7 @@ const SchemaArticle = ({
           },
           "publisher": {
             "@type": "Person",
-            "name": "Julian Aijal",
+            "name": createdBy?.name,
             "url": baseUrl
           },
           "inLanguage": "en-US"

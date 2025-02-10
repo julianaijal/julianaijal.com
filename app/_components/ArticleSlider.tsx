@@ -1,10 +1,9 @@
 import styles from "../styles/ArticleSlider.module.scss";
-import { IArticles } from "./_interfaces/interfaces";
+import { IArticleCollection } from "./_interfaces/interfaces";
 import { FC } from "react";
 import ArticleSliderEntry from "./ArticleSliderEntry";
 
-{/* todo: fix props passed to old naming {articles instead of articlesnew} */}
-const ArticleSlider: FC<IArticles> = ({ articlesnew = [] }) => {
+const ArticleSlider: FC<IArticleCollection> = ({ articles = [] }) => {
   return (
     <section className={styles.ArticleSlider}>
       <div className={styles.ArticleSliderCta}>
@@ -14,7 +13,7 @@ const ArticleSlider: FC<IArticles> = ({ articlesnew = [] }) => {
         </p>
       </div>
       <div className={styles.ArticleSliderEntries}>
-        {articlesnew.map((article, index) => (
+        {articles.map((article, index) => (
           <ArticleSliderEntry key={index} {...article}
           />
         ))}

@@ -30,6 +30,10 @@ const stripHtmlTags = (html: any) => {
    .trim();
 };
 
+const decodeEscapedChars = (str: string) => {
+   return str.replace(/\\n/g, "\n").replace(/\\t/g, "\t").replace(/\\r/g, "");
+ }
+
 const SchemaArticle = ({ 
   title,
   subtitle,
@@ -67,7 +71,7 @@ const SchemaArticle = ({
           "name": title,
           "headline": title,
           "description": subtitle,
-          "articleBody": stripHtmlTags(content?.text),
+          "articleBody": decodeEscapedChars(stripHtmlTags(content?.text)),
           "image": imageObject,
           "author": authorObject,
           "mainEntityOfPage": {

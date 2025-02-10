@@ -5,6 +5,7 @@ import DOMPurify from "dompurify";
 import { JSDOM } from "jsdom";
 import Image from "next/image";
 import { Metadata } from 'next';
+import SchemaArticle from "../../_lib/SchemaArticle";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -37,6 +38,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const sanitizedHtml = domPurify.sanitize(content);
     return (
       <>
+        <SchemaArticle title={data.title} />
         <NavBar />
         <main className={styles.Article}>
           <header>

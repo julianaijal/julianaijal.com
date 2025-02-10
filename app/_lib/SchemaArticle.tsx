@@ -1,25 +1,4 @@
-interface SchemaArticleProps {
-  title: string;
-  createdBy?: {
-    id?: string;
-    name?: string;
-  }
-  subtitle?: string;
-  content?: {
-    html: string;
-    markdown: string;
-    text: string;
-  };
-  headerImage?: {
-    url: string;
-    width: number;
-    height: number;
-  };
-  canonicalReference?: string;
-  canonicalLink?: string;
-  slug: string;
-}
-
+import { ISchemaArticle } from '../_components/_interfaces/interfaces';
 
 
 const stripHtmlTags = (html?: string) => {
@@ -43,7 +22,7 @@ const SchemaArticle = ({
   canonicalLink,
   createdBy,
   slug
-}: SchemaArticleProps) => {
+}: ISchemaArticle ) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://julianaijal.com';
   const articleUrl = `${baseUrl}/articles/${slug}`;
 

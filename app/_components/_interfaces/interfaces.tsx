@@ -22,3 +22,25 @@ export interface IArticles {
 export interface IShowcase {
   entries: IShowcaseEntry[];
 }
+
+export interface ISchemaArticle {
+  title: string;
+  createdBy?: {
+    id?: string;
+    name?: string;
+  }
+  subtitle?: string;
+  content?: {
+    html: string;
+    markdown: string;
+    text: string;
+  };
+  headerImage?: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  canonicalReference?: string;
+  canonicalLink?: string;
+  slug: string;
+}

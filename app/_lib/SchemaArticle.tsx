@@ -23,7 +23,11 @@ interface SchemaArticleProps {
 
 
 const stripHtmlTags = (html: any) => {
-   return html.replace(/<\/?[^>]+(>|$)/g, "");
+   return html
+   .replace(/<\/?[^>]+(>|$)/g, "")
+   .replace(/\\n|\\t|\\r/g, " ")
+   .replace(/\s+/g, " ")
+   .trim();
 };
 
 const SchemaArticle = ({ 

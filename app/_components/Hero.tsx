@@ -21,8 +21,8 @@ const Hero = () => {
             isVisible ? styles.fadeInText : styles.hiddenText
           }`}
         >
-          Hi, I&apos;m <span className={styles.name}>Julian</span>,<br />
-          Web developer.
+          Hi, I&apos;m <span className={styles.name}>Julian</span>, <br /> Web
+          Developer<span className={styles.cursor}>|</span>
         </h1>
         <Button />
       </div>

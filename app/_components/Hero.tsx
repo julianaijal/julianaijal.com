@@ -13,7 +13,7 @@ const Hero = () => {
     <section className={styles.HeroGrid}>
       <div className={styles.Hero__cta}>
         <h1
-          ref={(el) => {
+          ref={el => {
             ref(el);
             targetEl.current = el;
           }}
@@ -28,10 +28,10 @@ const Hero = () => {
       </div>
       <div className={styles.Hero__visual}>
         <Image
-          alt="julian aijal"
+          alt='julian aijal'
           src={myIllustration}
           priority={true}
-          sizes="100vw"
+          sizes='100vw'
           style={{
             width: '100%',
             height: 'auto',

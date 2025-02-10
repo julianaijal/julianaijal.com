@@ -22,7 +22,8 @@ interface SchemaArticleProps {
 
 
 
-const stripHtmlTags = (html: any) => {
+const stripHtmlTags = (html?: string) => {
+   if (!html) return "";
    return html
    .replace(/<\/?[^>]+(>|$)/g, "")
    .replace(/\\n|\\t|\\r/g, " ")
@@ -71,7 +72,7 @@ const SchemaArticle = ({
           "name": title,
           "headline": title,
           "description": subtitle,
-          "articleBody": decodeEscapedChars(stripHtmlTags(content?.text)),
+          "articleBody": content?.text ? decodeEscapedChars(stripHtmlTags(content.text)) : "",
           "image": imageObject,
           "author": authorObject,
           "mainEntityOfPage": {

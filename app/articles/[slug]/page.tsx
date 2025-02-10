@@ -38,7 +38,15 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const sanitizedHtml = domPurify.sanitize(content);
     return (
       <>
-        <SchemaArticle title={data.title} />
+        <SchemaArticle 
+          title={data.title}
+          subtitle={data.subtitle}
+          content={data.content}
+          headerImage={data.headerImage}
+          canonicalReference={data.canonicalReference}
+          canonicalLink={data.canonicalLink}
+          slug={slug}
+        />
         <NavBar />
         <main className={styles.Article}>
           <header>

@@ -18,10 +18,7 @@ const nextConfig = {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin'
           },
-          {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'credentialless'
-          },
+          // COEP removed to allow all images to load properly
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'

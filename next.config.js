@@ -36,6 +36,7 @@ const nextConfig = {
     }
   ],
   sassOptions: {
+    // to do: fix dart sass warning
     silenceDeprecations: ['legacy-js-api']
   },
   images: {

@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; img-src 'self' data: https://*.graphassets.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'`
+            value: `default-src 'self'; img-src 'self' data: https://*.graphassets.com; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'`
           },
           {
             key: 'Strict-Transport-Security',

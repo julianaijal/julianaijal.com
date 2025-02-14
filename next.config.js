@@ -12,7 +12,7 @@ const nextConfig = {
     },
     {
       key: 'Cross-Origin-Opener-Policy',
-      value: 'noopener-allow-popups'
+      value: 'same-origin',
     },
     {
       key: 'Cross-Origin-Embedder-Policy',

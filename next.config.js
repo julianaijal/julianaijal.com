@@ -8,7 +8,16 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; img-src 'self' data: https://*.graphassets.com; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'`
+            value: `
+              default-src 'self';
+              img-src 'self' data: blob: *;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com;
+              style-src 'self' 'unsafe-inline';
+              connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
+              font-src 'self' data: *;
+              media-src 'self' *;
+              frame-src 'self' *;
+            `.replace(/\s+/g, ' ').trim()
           },
           {
             key: 'Strict-Transport-Security',

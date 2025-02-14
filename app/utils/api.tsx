@@ -7,7 +7,7 @@ const fetchGraphQL = async (query: string) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query }),
       next: {
-        revalidate: 86400,
+        // revalidate: 86400,
       },
     });
     if (!resp.ok) {

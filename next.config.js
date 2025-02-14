@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://eu-central-1-shared-euc1-02.graphassets.com https://placehold.co; font-src 'self'; connect-src 'self' vitals.vercel-insights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; object-src 'none'; base-uri 'self'; worker-src 'self' blob:; manifest-src 'self'`
+            value: `default-src 'self'; img-src 'self' data: https://*.graphassets.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'`
           },
           {
             key: 'Strict-Transport-Security',
@@ -18,10 +18,7 @@ const nextConfig = {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin'
           },
-          {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp'
-          },
+          // COEP removed to allow all images to load properly
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
@@ -51,7 +48,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'eu-central-1-shared-euc1-02.graphassets.com',
+        hostname: '*.graphassets.com',
         pathname: '/**',
       },
       {

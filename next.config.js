@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  headers: [
+    {
+      key: 'Strict-Transport-Security',
+      value: 'max-age=63072000; includeSubDomains; preload',
+    },
+  ],
   sassOptions: {
     silenceDeprecations: ['legacy-js-api']
   },

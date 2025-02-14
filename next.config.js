@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; connect-src 'self' vitals.vercel-insights.com https://www.google-analytics.com *.clarity.ms; font-src 'self'; frame-ancestors 'none'; img-src 'self' data: blob: https://*.graphassets.com https://placehold.co *.clarity.ms *.bing.com *.virtualearth.net; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com *.clarity.ms; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'`
+            value: `default-src 'self'; connect-src 'self' vitals.vercel-insights.com https://www.google-analytics.com *.clarity.ms *.vercel-scripts.com; font-src 'self'; frame-ancestors 'none'; img-src 'self' data: blob: https://*.graphassets.com https://placehold.co *.clarity.ms *.bing.com *.virtualearth.net; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com *.clarity.ms *.vercel-scripts.com; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'`
           },
           {
             key: 'Strict-Transport-Security',

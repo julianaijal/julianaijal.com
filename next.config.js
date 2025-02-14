@@ -4,7 +4,7 @@ const nextConfig = {
   headers: [
     {
       key:"Content-Security-Policy",
-      value:"default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://eu-central-1-shared-euc1-02.graphassets.com; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'"
+      value:`default-src 'self'; script-src 'self' '${process.env.NEXT_PUBLIC_SCRIPT_HASH}' https://www.googletagmanager.com; style-src 'self' '${process.env.NEXT_PUBLIC_STYLE_HASH}'; img-src 'self' data: https://eu-central-1-shared-euc1-02.graphassets.com; font-src 'self'; connect-src 'self' vitals.vercel-insights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; object-src 'none'; base-uri 'self'`
     },
     {
       key: 'Strict-Transport-Security',

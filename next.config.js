@@ -1,40 +1,47 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  headers: [
-    {
-      key:"Content-Security-Policy",
-      value:`default-src 'self'; script-src 'self' '${process.env.NEXT_PUBLIC_SCRIPT_HASH}' https://www.googletagmanager.com; style-src 'self' '${process.env.NEXT_PUBLIC_STYLE_HASH}'; img-src 'self' data: https://eu-central-1-shared-euc1-02.graphassets.com; font-src 'self'; connect-src 'self' vitals.vercel-insights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; object-src 'none'; base-uri 'self'`
-    },
-    {
-      key: 'Strict-Transport-Security',
-      value: 'max-age=63072000; includeSubDomains; preload',
-    },
-    {
-      key: 'Cross-Origin-Opener-Policy',
-      value: 'same-origin',
-    },
-    {
-      key: 'Cross-Origin-Embedder-Policy',
-      value: 'require-corp'
-    },
-    {
-      key: 'X-Frame-Options',
-      value: 'SAMEORIGIN'
-    },
-    {
-      key: 'X-Content-Type-Options',
-      value: 'nosniff'
-    },
-    {
-      key: 'Referrer-Policy',
-      value: 'strict-origin-when-cross-origin'
-    },
-    {
-      key: 'Permissions-Policy',
-      value: 'camera=(), microphone=(), geolocation=()'
-    }
-  ],
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: `default-src "self"; script-src "self" "${process.env.NEXT_PUBLIC_SCRIPT_HASH}" https://www.googletagmanager.com; style-src "self" "${process.env.NEXT_PUBLIC_STYLE_HASH}"; img-src "self" data: https://eu-central-1-shared-euc1-02.graphassets.com; font-src "self"; connect-src "self" vitals.vercel-insights.com https://www.google-analytics.com; frame-ancestors "none"; form-action "self"; object-src "none"; base-uri "self"`
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin'
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
+          }
+        ]
+      }
+    ]
+  },
   sassOptions: {
     // to do: fix dart sass warning
     silenceDeprecations: ['legacy-js-api']

@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; connect-src 'self' vitals.vercel-insights.com https://www.google-analytics.com *.clarity.ms *.vercel-scripts.com; font-src 'self'; frame-ancestors 'none'; img-src 'self' data: blob: https://*.graphassets.com https://placehold.co *.clarity.ms *.bing.com *.virtualearth.net; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com *.clarity.ms *.vercel-scripts.com; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'self'`
+            value: `default-src 'self'; img-src 'self' data: https://*.graphassets.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'`
           },
           {
             key: 'Strict-Transport-Security',
@@ -18,10 +18,10 @@ const nextConfig = {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin'
           },
-          {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp'
-          },
+          // {
+          //   key: 'Cross-Origin-Embedder-Policy',
+          //   value: 'require-corp'
+          // },
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'

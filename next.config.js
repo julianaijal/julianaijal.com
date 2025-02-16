@@ -48,10 +48,6 @@ const nextConfig = {
       }
     ]
   },
-  sassOptions: {
-    // to do: fix dart sass warning
-    silenceDeprecations: ['legacy-js-api']
-  },
   images: {
     // Use remotePatterns to allow specific external images
     remotePatterns: [

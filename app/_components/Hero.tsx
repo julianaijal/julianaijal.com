@@ -25,6 +25,7 @@ const Hero = () => {
         if(text == ''){
           setIsDeleting(false)
           setWordIndex((prevWordIndex) => prevWordIndex + 1);
+          console.log("New index:", wordIndex)
         }
       }
     }

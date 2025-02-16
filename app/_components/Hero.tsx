@@ -15,11 +15,10 @@ const Hero = () => {
 
   useEffect((): any => {
     const currentWord = words[wordIndex];
-    setText('test');
-    const handleBackspacing = () => {};
-
-    return setText;
-  }, []);
+    console.log('Current word:', currentWord);
+    setText(currentWord);
+    return ;
+  }, [wordIndex, words]);
 
   return (
     <section className={styles.HeroGrid}>

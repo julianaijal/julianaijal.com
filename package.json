@@ -23,7 +23,8 @@
     "sass": "^1.84.0",
     "sitemap": "^8.0.0",
     "ts-node": "^10.9.2",
-    "web-vitals": "^4.2.2"
+    "web-vitals": "^4.2.2",
+    "webp-converter": "^2.3.3"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",

@@ -24,6 +24,7 @@ const Hero = () => {
         // if everything is deleted stop deleting
         if(text == ''){
           setIsDeleting(false)
+          setWordIndex((prevWordIndex) => prevWordIndex + 1);
         }
       }
     }

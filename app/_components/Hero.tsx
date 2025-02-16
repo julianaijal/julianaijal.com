@@ -11,12 +11,20 @@ const Hero = () => {
   const words = ['Web Developer', 'SEO Specialist', 'Digital Marketeer'];
   const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(true);
 
-  useEffect((): any => {
+  useEffect(() => {
     const currentWord = words[wordIndex];
-    console.log('Current word:', currentWord);
     setText(currentWord);
+
+    const handelBackSpacing = () => {
+      if(isDeleting) {
+        // remove character on deletion
+        setText((prevText) => prevText.slice(0, -1)); 
+      }
+    }
+
+    handelBackSpacing();
     return ;
   }, [wordIndex, words]);
 

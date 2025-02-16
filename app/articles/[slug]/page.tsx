@@ -2,6 +2,7 @@ import { NavBar, Footer } from "../../_components";
 import styles from "../../styles/Article.module.scss";
 import apiFunctions from "../../utils/api";
 import DOMPurify from "dompurify";
+import html from "html-react-parser";
 import { JSDOM } from "jsdom";
 import Image from "next/image";
 import { Metadata } from 'next';

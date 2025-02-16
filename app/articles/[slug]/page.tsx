@@ -48,6 +48,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           canonicalReference={data.canonicalReference}
           canonicalLink={data.canonicalLink}
           slug={slug}
+          createdBy={data.createdBy}
         />
         <NavBar />
         <main className={styles.Article}>

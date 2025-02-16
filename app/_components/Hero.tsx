@@ -14,10 +14,13 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(true);
 
   useEffect(() => {
+    console.log('ticker useEffect running');
     const currentWord = words[wordIndex];
     setText(currentWord);
 
     const handelBackSpacing = () => {
+      console.log('handelBackSpacing called');
+      console.log('isDeleting:', isDeleting);
       if(isDeleting) {
         // remove character on deletion
         setText((prevText) => prevText.slice(0, -1)); 
@@ -26,6 +29,10 @@ const Hero = () => {
           setIsDeleting(false)
           setWordIndex((prevWordIndex) => prevWordIndex + 1);
           console.log("New index:", wordIndex)
+        } else {
+          console.log('Current word:', currentWord);
+          console.log('Previous text:', text);
+
         }
       }
     }

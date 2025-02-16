@@ -2,6 +2,7 @@ import { NavBar, Footer } from "../../_components";
 import styles from "../../styles/Article.module.scss";
 import apiFunctions from "../../utils/api";
 import DOMPurify from "dompurify";
+import html from "html-react-parser";
 import { JSDOM } from "jsdom";
 import Image from "next/image";
 import { Metadata } from 'next';
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-
+// to-do: lazy load images / change img tags to next/image
   try {
     const data = await apiFunctions.fetchArticleBySlug(slug);
     const content = data.content.html;
@@ -36,6 +37,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const window = new JSDOM("").window;
     const domPurify = DOMPurify(window);
     const sanitizedHtml = domPurify.sanitize(content);
+    const parsedHtml =  html(sanitizedHtml);
     return (
       <>
         <SchemaArticle 
@@ -74,10 +76,9 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 </a>
               </p>
             )}
-          <article
-            className={`wrapper ${styles.ArticleContent}`}
-            dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
-          />
+          <article className={`wrapper ${styles.ArticleContent}`}>
+            {parsedHtml}
+          </article>
           </div>
 
           

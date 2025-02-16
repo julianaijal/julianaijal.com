@@ -4,7 +4,10 @@ const fetchGraphQL = async (query: string) => {
   try {
     const resp = await fetch(api, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
+       },
       body: JSON.stringify({ query }),
       next: {
         // revalidate: 86400,

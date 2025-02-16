@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-
+// to-do: lazy load images / change img tags to next/image
   try {
     const data = await apiFunctions.fetchArticleBySlug(slug);
     const content = data.content.html;
@@ -75,6 +75,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               </p>
             )}
           <article
+          // to-do: lazy load images / change img tags to next/image
             className={`wrapper ${styles.ArticleContent}`}
             dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
           />

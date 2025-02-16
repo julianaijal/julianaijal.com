@@ -39,12 +39,12 @@ export interface IShowcase {
 export interface ISchemaArticle {
   title: string;
   slug: string;
-  createdBy?: {
+  createdBy: {
     id: string;
     name: string;
   };
-  subtitle?: string;
-  content?: {
+  subtitle: string;
+  content: {
     html: string;
     markdown: string;
     text: string;

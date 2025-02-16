@@ -8,6 +8,18 @@ import useInViewFade from '../hooks/useInViewFade';
 
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
+  const words = ['Web Developer', 'SEO Specialist', 'Digital Marketeer'];
+  const [text, setText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect((): any => {
+    const currentWord = words[wordIndex];
+    setText('test');
+    const handleBackspacing = () => {};
+
+    return setText;
+  }, []);
 
   return (
     <section className={styles.HeroGrid}>
@@ -21,8 +33,9 @@ const Hero = () => {
             isVisible ? styles.fadeInText : styles.hiddenText
           }`}
         >
-          Hi, I&apos;m <span className={styles.name}>Julian</span>, <br /> Web
-          Developer<span className={styles.cursor}>|</span>
+          Hi, I&apos;m <span className={styles.name}>Julian</span>, <br />{' '}
+          {text}
+          <span className={styles.cursor}>|</span>
         </h1>
         <Button />
       </div>

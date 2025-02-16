@@ -37,6 +37,9 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const window = new JSDOM("").window;
     const domPurify = DOMPurify(window);
     const sanitizedHtml = domPurify.sanitize(content);
+    console.log(sanitizedHtml, "sanitized");
+    const parsedHtml =  html(sanitizedHtml);
+    console.log(parsedHtml, "parsed");
     return (
       <>
         <SchemaArticle 

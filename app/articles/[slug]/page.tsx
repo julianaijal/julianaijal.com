@@ -37,9 +37,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const window = new JSDOM("").window;
     const domPurify = DOMPurify(window);
     const sanitizedHtml = domPurify.sanitize(content);
-    console.log(sanitizedHtml, "sanitized");
     const parsedHtml =  html(sanitizedHtml);
-    console.log(parsedHtml, "parsed");
     return (
       <>
         <SchemaArticle 
@@ -78,11 +76,9 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 </a>
               </p>
             )}
-          <article
-          // to-do: lazy load images / change img tags to next/image
-            className={`wrapper ${styles.ArticleContent}`}
-            dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
-          />
+          <article className={`wrapper ${styles.ArticleContent}`}>
+            {parsedHtml}
+          </article>
           </div>
 
           

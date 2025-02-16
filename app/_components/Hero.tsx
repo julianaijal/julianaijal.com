@@ -21,6 +21,10 @@ const Hero = () => {
       if(isDeleting) {
         // remove character on deletion
         setText((prevText) => prevText.slice(0, -1)); 
+        // if everything is deleted stop deleting
+        if(text == ''){
+          setIsDeleting(false)
+        }
       }
     }
 

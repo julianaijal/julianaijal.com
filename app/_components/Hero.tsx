@@ -8,6 +8,39 @@ import useInViewFade from '../hooks/useInViewFade';
 
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
+  const words = ['Digital Marketer', 'SEO Specialist', 'Web Developer'];
+  const [text, setText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(true);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex % words.length];
+    const typeSpeed = 150;
+    const deleteSpeed = 100;
+    const pauseTime = 2000;
+
+    const handelBackSpacing = () => {
+      const timer = setTimeout(() => {
+        if (isDeleting) {
+          setText((prevText) => prevText.slice(0, -1));
+          if (text.length === 0) {
+            setIsDeleting(false);
+            setWordIndex((prevIndex) => prevIndex + 1);
+          }
+        } else {
+          if (text.length === currentWord.length) {
+            setTimeout(() => setIsDeleting(true), pauseTime);
+            return;
+          }
+          setText(currentWord.slice(0, text.length + 1));
+        }
+      }, isDeleting ? deleteSpeed : typeSpeed);
+
+      return () => clearTimeout(timer);
+    };
+
+    handelBackSpacing();
+  }, [text, isDeleting, wordIndex, words]);
 
   return (
     <section className={styles.HeroGrid}>
@@ -21,8 +54,9 @@ const Hero = () => {
             isVisible ? styles.fadeInText : styles.hiddenText
           }`}
         >
-          Hi, I&apos;m <span className={styles.name}>Julian</span>, <br /> Web
-          Developer<span className={styles.cursor}>|</span>
+          Hi, I&apos;m <span className={styles.name}>Julian</span>, <br />{' '}
+          {text}
+          <span className={styles.cursor}>|</span>
         </h1>
         <Button />
       </div>

@@ -5,7 +5,8 @@ const fetchGraphQL = async (query: string) => {
     const resp = await fetch(api, {
       method: "POST",
       headers: { 
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${process.env.HYGRAPH_AUTH_TOKEN}`
       },
       body: JSON.stringify({ query }),
       next: {

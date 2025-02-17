@@ -1,10 +1,23 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
 .title {
   font-size: 3.5rem;
   font-weight: 600;
   line-height: 4.4rem;
   letter-spacing: -0.01em;
   text-align: left;
+  height: 14rem;
 
+
+
+  @include tablet {
+    height: 18rem;
+  }
+
+  @include desktop {
+    height: inherit;
+  }
   a {
     color: #0070f3;
     text-decoration: none;

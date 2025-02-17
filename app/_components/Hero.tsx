@@ -8,38 +8,39 @@ import useInViewFade from '../hooks/useInViewFade';
 
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
-  const words = ['Web Developer', 'SEO Specialist', 'Digital Marketeer'];
+  const words = ['Digital Marketer', 'SEO Specialist', 'Web Developer'];
   const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(true);
 
   useEffect(() => {
-    console.log('ticker useEffect running');
-    const currentWord = words[wordIndex];
-    setText(currentWord);
+    const currentWord = words[wordIndex % words.length];
+    const typeSpeed = 150;
+    const deleteSpeed = 100;
+    const pauseTime = 2000;
 
     const handelBackSpacing = () => {
-      console.log('handelBackSpacing called');
-      console.log('isDeleting:', isDeleting);
-      if(isDeleting) {
-        // remove character on deletion
-        setText((prevText) => prevText.slice(0, -1)); 
-        // if everything is deleted stop deleting
-        if(text == ''){
-          setIsDeleting(false)
-          setWordIndex((prevWordIndex) => prevWordIndex + 1);
-          console.log("New index:", wordIndex)
+      const timer = setTimeout(() => {
+        if (isDeleting) {
+          setText((prevText) => prevText.slice(0, -1));
+          if (text.length === 0) {
+            setIsDeleting(false);
+            setWordIndex((prevIndex) => prevIndex + 1);
+          }
         } else {
-          console.log('Current word:', currentWord);
-          console.log('Previous text:', text);
-
+          if (text.length === currentWord.length) {
+            setTimeout(() => setIsDeleting(true), pauseTime);
+            return;
+          }
+          setText(currentWord.slice(0, text.length + 1));
         }
-      }
-    }
+      }, isDeleting ? deleteSpeed : typeSpeed);
+
+      return () => clearTimeout(timer);
+    };
 
     handelBackSpacing();
-    return ;
-  }, [wordIndex, words]);
+  }, [text, isDeleting, wordIndex, words]);
 
   return (
     <section className={styles.HeroGrid}>

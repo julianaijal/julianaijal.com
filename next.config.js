@@ -14,6 +14,12 @@ const stsHeader = `
   max-age=63072000;
   includeSubDomains; preload
 `
+
+const ppHeader = `
+  camera=(),
+  microphone=(),
+  geolocation=()
+`
 const nextConfig = {
   images: {
     domains: ['media.graphassets.com'],
@@ -54,7 +60,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
+            value: ppHeader.replace(/\s+/g, ' ').trim()
           }
         ]
       }

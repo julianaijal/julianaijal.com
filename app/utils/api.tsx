@@ -10,7 +10,7 @@ const fetchGraphQL = async (query: string) => {
       },
       body: JSON.stringify({ query }),
       next: {
-        // revalidate: 172800 // revalidate every two days
+        revalidate: 172800 // revalidate every two days
       },
     });
     if (!resp.ok) {

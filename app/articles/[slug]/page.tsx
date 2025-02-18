@@ -8,13 +8,14 @@ import Image from "next/image";
 import { Metadata } from 'next';
 import SchemaArticle from "../../_lib/SchemaArticle";
 
-const getArticleData = async (slug) => {
+const getArticleData = async (slug: string) => {
   const data = await apiFunctions.fetchArticleBySlug(slug);
+  return data;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await apiFunctions.fetchArticleBySlug(slug);
+  const data = await getArticleData(slug);
 
   const metadata: Metadata = {
     title: data?.title,
@@ -34,7 +35,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 // to-do: lazy load images / change img tags to next/image
   try {
-    const data = await apiFunctions.fetchArticleBySlug(slug);
+    const data = await getArticleData(slug);
     const content = data.content.html;
     const headerImg = data.headerImage.url;
     console.log(headerImg)

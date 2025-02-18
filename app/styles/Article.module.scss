@@ -58,7 +58,12 @@
   &Content {
     font-size: 1.125rem;
     line-height: 1.8;
-    
+
+    &Inner{
+      background-color: #1e2637;
+      padding: 2rem;
+      border-radius: 12px;
+    }    
 
     h2 {
       font-size: 1.875rem;

@@ -78,7 +78,9 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               </p>
             )}
           <article className={`wrapper ${styles.ArticleContent}`}>
-            {parsedHtml}
+            <section className={styles.ArticleContentInner}>
+              {parsedHtml}
+            </section>
           </article>
           </div>
 

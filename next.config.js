@@ -1,5 +1,34 @@
 /** @type {import('next').NextConfig} */
+
+const cspHeader = `
+   default-src 'self';
+   img-src 'self' data: blob: *;
+   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com;
+   style-src 'self' 'unsafe-inline';
+   connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
+   font-src 'self' data: *;
+   media-src 'self' *;
+   frame-src 'self' *;
+`
+const stsHeader = `
+  max-age=63072000;
+  includeSubDomains; preload
+`
+
+const ppHeader = `
+  camera=(),
+  microphone=(),
+  geolocation=()
+`
 const nextConfig = {
+  images: {
+    domains: ['media.graphassets.com'],
+    formats: ['image/avif', 'image/webp'],
+    quality: 85,
+    minimumCacheTTL: 2592000,
+
+  },
+  
   reactStrictMode: true,
   async headers() {
     return [
@@ -8,26 +37,16 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `
-              default-src 'self';
-              img-src 'self' data: blob: *;
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com;
-              style-src 'self' 'unsafe-inline';
-              connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
-              font-src 'self' data: *;
-              media-src 'self' *;
-              frame-src 'self' *;
-            `.replace(/\s+/g, ' ').trim()
+            value: cspHeader.replace(/\s+/g, ' ').trim()
           },
           {
             key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
+            value: stsHeader.replace(/\s+/g, ' ').trim()
           },
           {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin'
           },
-          // COEP removed to allow all images to load properly
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
@@ -42,7 +61,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
+            value: ppHeader.replace(/\s+/g, ' ').trim()
           }
         ]
       }

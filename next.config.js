@@ -10,6 +10,10 @@ const cspHeader = `
    media-src 'self' *;
    frame-src 'self' *;
 `
+const stsHeader = `
+  max-age=63072000;
+  includeSubDomains; preload
+`
 const nextConfig = {
   images: {
     domains: ['media.graphassets.com'],
@@ -26,11 +30,11 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value:cspHeader.replace(/\s+/g, ' ').trim()
+            value: cspHeader.replace(/\s+/g, ' ').trim()
           },
           {
             key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
+            value: stsHeader.replace(/\s+/g, ' ').trim()
           },
           {
             key: 'Cross-Origin-Opener-Policy',

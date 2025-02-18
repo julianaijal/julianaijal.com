@@ -2,7 +2,8 @@
 const nextConfig = {
   images: {
     domains: ['media.graphassets.com'],
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
+    quality: 85,
 
   },
   reactStrictMode: true,

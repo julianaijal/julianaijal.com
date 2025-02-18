@@ -8,6 +8,10 @@ import Image from "next/image";
 import { Metadata } from 'next';
 import SchemaArticle from "../../_lib/SchemaArticle";
 
+const getArticleData = async (slug) => {
+  const data = await apiFunctions.fetchArticleBySlug(slug);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = await apiFunctions.fetchArticleBySlug(slug);

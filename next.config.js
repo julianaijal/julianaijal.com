@@ -3,7 +3,7 @@
 const cspHeader = `
    default-src 'self';
    img-src 'self' data: blob: *;
-   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com;
+   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com *.vercel.live;
    style-src 'self' 'unsafe-inline';
    connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
    font-src 'self' data: *;

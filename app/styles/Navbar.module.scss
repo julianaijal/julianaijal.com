@@ -4,6 +4,7 @@
   padding: 1.5rem 9.75rem;
   position: sticky;
   top: 0;
+  z-index: 100;
 
   @media screen and (max-width: 767px) {
     padding: 1.5rem;

@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import styles from '../styles/Hero.module.scss';
 import Image from 'next/image';
 import myIllustration from '../../public/assets/julian.svg';

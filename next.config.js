@@ -25,7 +25,7 @@ const nextConfig = {
     domains: ['media.graphassets.com'],
     formats: ['image/avif', 'image/webp'],
     quality: 85,
-    minimumCacheTTL: 86400,
+    minimumCacheTTL: 2592000,
 
   },
   

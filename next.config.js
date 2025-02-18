@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
+
+const cspHeader = `
+   default-src 'self';
+   img-src 'self' data: blob: *;
+   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com;
+   style-src 'self' 'unsafe-inline';
+   connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
+   font-src 'self' data: *;
+   media-src 'self' *;
+   frame-src 'self' *;
+`
 const nextConfig = {
   images: {
     domains: ['media.graphassets.com'],
@@ -6,6 +17,7 @@ const nextConfig = {
     quality: 85,
 
   },
+  
   reactStrictMode: true,
   async headers() {
     return [
@@ -14,16 +26,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `
-              default-src 'self';
-              img-src 'self' data: blob: *;
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com;
-              style-src 'self' 'unsafe-inline';
-              connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
-              font-src 'self' data: *;
-              media-src 'self' *;
-              frame-src 'self' *;
-            `.replace(/\s+/g, ' ').trim()
+            value:cspHeader.replace(/\s+/g, ' ').trim()
           },
           {
             key: 'Strict-Transport-Security',
@@ -33,7 +36,6 @@ const nextConfig = {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin'
           },
-          // COEP removed to allow all images to load properly
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'

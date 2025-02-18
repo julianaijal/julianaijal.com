@@ -25,6 +25,7 @@ const nextConfig = {
     domains: ['media.graphassets.com'],
     formats: ['image/avif', 'image/webp'],
     quality: 85,
+    minimumCacheTTL: 86400, // Cache for 24 hours (60 * 60 * 24 seconds)
 
   },
   

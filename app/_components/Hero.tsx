@@ -8,7 +8,8 @@ import useInViewFade from '../hooks/useInViewFade';
 
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
-  const words = ['Digital Marketer', 'SEO Specialist', 'Web Developer'];
+
+  const words = useMemo(() => ['Digital Marketer', 'SEO Specialist', 'Web Developer'],[])
   const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(true);
@@ -18,7 +19,6 @@ const Hero = () => {
     const typeSpeed = 150;
     const deleteSpeed = 100;
     const pauseTime = 2000;
-
     const handelBackSpacing = () => {
       const timer = setTimeout(() => {
         if (isDeleting) {

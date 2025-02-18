@@ -65,10 +65,14 @@ const Hero = () => {
           alt='julian aijal'
           src={myIllustration}
           priority={true}
-          sizes='100vw'
+          width={800}
+          height={600}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+          quality={85}
           style={{
             width: '100%',
             height: 'auto',
+            maxWidth: '800px'
           }}
         />
       </div>

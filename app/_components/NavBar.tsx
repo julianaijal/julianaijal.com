@@ -11,7 +11,7 @@ const NavBar = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleScroll =  () =>{
-        setScroll(scrollY > 1)
+        setScroll(window.scrollY > 1)
       }
       window.addEventListener('scroll', handleScroll);
       return () => {window.removeEventListener('scroll', handleScroll)}

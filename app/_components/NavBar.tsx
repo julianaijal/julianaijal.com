@@ -10,7 +10,9 @@ const NavBar = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      console.log('hallo met mij')
+     window.addEventListener("scroll", () =>
+        console.log("i am scrolling")
+    )
     }
   }, []);
   return (

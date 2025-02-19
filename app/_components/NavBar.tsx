@@ -6,8 +6,10 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const NavBar = () => {
+  const [scroll, setScroll] = useState(true);
+
   return (
-    <nav className={`${styles.nav} ${styles.nav__scrolled}`}>
+    <nav className={`${styles.nav} ${scroll && styles.nav__scrolled}`}>
       <div className={styles.nav__logo}>
         <Link href="/">
           <Image

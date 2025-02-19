@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const NavBar = () => {
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${styles.nav__scrolled}`}>
       <div className={styles.nav__logo}>
         <Link href="/">
           <Image

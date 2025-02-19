@@ -8,6 +8,11 @@ import { useEffect, useState } from 'react';
 const NavBar = () => {
   const [scroll, setScroll] = useState(true);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log('hallo met mij')
+    }
+  }, []);
   return (
     <nav className={`${styles.nav} ${scroll && styles.nav__scrolled}`}>
       <div className={styles.nav__logo}>

@@ -11,10 +11,11 @@ const NavBar = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleScroll =  () =>{
-        console.log('i am scrolling');
         setScroll(scrollY > 1)
       }
       window.addEventListener('scroll', handleScroll);
+      return () => {window.removeEventListener('scroll', handleScroll)}
+
     }
   }, []);
   return (

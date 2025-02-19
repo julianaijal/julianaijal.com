@@ -6,12 +6,13 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const NavBar = () => {
-  const [scroll, setScroll] = useState(true);
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleScroll =  () =>{
         console.log('i am scrolling');
+        setScroll(scrollY > 1)
       }
       window.addEventListener('scroll', handleScroll);
     }

@@ -3,6 +3,7 @@ import styles from './../styles/Navbar.module.scss';
 import Image from 'next/image';
 import myLogo from '../../public/assets/julian-aijal-logo.svg';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const NavBar = () => {
   return (

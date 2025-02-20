@@ -5,7 +5,7 @@ import Image from 'next/image';
 import myIllustration from '../../public/assets/julian.svg';
 import { Button } from '.';
 import useInViewFade from '../hooks/useInViewFade';
-import { ReactScan } from '../_lib/ReactScan';
+// import { ReactScan } from '../_lib/ReactScan';
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
 
@@ -44,7 +44,7 @@ const Hero = () => {
 
   return (
     <>
-          <ReactScan />
+          {/* <ReactScan /> */}
           <section className={styles.HeroGrid}>
       <div className={styles.Hero__cta}>
         <h1

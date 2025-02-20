@@ -5,6 +5,7 @@ import WebVitals from "./_lib/WebVitals";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Monitoring } from "react-scan/monitoring/next";
+import Script from "next/script";
 
 
 export const metadata: Metadata = {
@@ -23,12 +24,20 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-M8PS5F6" />
-      <SpeedInsights/>
+      <head>
+        <GoogleTagManager gtmId="GTM-M8PS5F6" />
+        <SpeedInsights/>
+        <Script
+          src="https://unpkg.com/react-scan/dist/install-hook.global.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body>
         <Monitoring
           apiKey={process.env.REACT_SCAN_API_KEY}
           url="https://monitoring.react-scan.com/api/v1/ingest"
+          commit={process.env.VERCEL_GIT_COMMIT_SHA} 
+          branch={process.env.VERCEL_GIT_COMMIT_REF}
         />
         <WebVitals />
         {children}

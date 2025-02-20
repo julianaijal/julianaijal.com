@@ -5,7 +5,7 @@ import Image from 'next/image';
 import myIllustration from '../../public/assets/julian.svg';
 import { Button } from '.';
 import useInViewFade from '../hooks/useInViewFade';
-
+// import { ReactScan } from '../_lib/ReactScan';
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
 
@@ -43,7 +43,9 @@ const Hero = () => {
   }, [text, isDeleting, wordIndex, words]);
 
   return (
-    <section className={styles.HeroGrid}>
+    <>
+          {/* <ReactScan /> */}
+          <section className={styles.HeroGrid}>
       <div className={styles.Hero__cta}>
         <h1
           ref={el => {
@@ -77,6 +79,8 @@ const Hero = () => {
         />
       </div>
     </section>
+    </>
+
   );
 };
 

@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const ReactComponentName = require("react-scan/react-component-name/webpack");
+
 
 const cspHeader = `
    default-src 'self';
@@ -66,6 +68,12 @@ const nextConfig = {
         ]
       }
     ]
+  },
+  webpack: (config) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.plugins.push(ReactComponentName({}));
+    }
+    return config;
   },
   sassOptions: {
     // to do: fix dart sass warning

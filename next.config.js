@@ -1,7 +1,6 @@
+const { default: ReactComponentName } = require("react-scan/react-component-name/webpack");
+
 /** @type {import('next').NextConfig} */
-const ReactComponentNamePlugin = require("react-scan/react-component-name/webpack");
-
-
 const cspHeader = `
    default-src 'self';
    img-src 'self' data: blob: *;
@@ -69,12 +68,14 @@ const nextConfig = {
       }
     ]
   },
+
   webpack: (config) => {
     if (process.env.NODE_ENV === 'production') {
-      config.plugins.push(ReactComponentNamePlugin);
+      config.plugins.push(ReactComponentName({}));
     }
     return config;
   },
+
   sassOptions: {
     // to do: fix dart sass warning
     silenceDeprecations: ['legacy-js-api']

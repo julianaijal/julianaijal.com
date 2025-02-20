@@ -21,6 +21,7 @@ My personal website and blog, built with modern web technologies.
 - **Core:** Next.js 15, TypeScript, SASS
 - **Content:** Hygraph CMS, Vercel Postgres
 - **Analytics:** Vercel Analytics, GA4, GTM
+- **Performance:** Real-time component monitoring and insights (React Scan)
 - **Infrastructure:** Vercel Platform
 
 ## 🚀 Quick Start

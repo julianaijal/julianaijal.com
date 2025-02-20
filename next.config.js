@@ -68,11 +68,11 @@ const nextConfig = {
       }
     ]
   },
-
+   
   webpack: (config) => {
-    // if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       config.plugins.push(ReactComponentName({}));
-    // }
+    }
     return config;
   },
 

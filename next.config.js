@@ -4,9 +4,9 @@ const { default: ReactComponentName } = require("react-scan/react-component-name
 const cspHeader = `
    default-src 'self';
    img-src 'self' data: blob: *;
-   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com *.vercel.live;
+   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.unpkg.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com *.vercel.live *.react-scan.com;
    style-src 'self' 'unsafe-inline';
-   connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
+   connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms *.react-scan.com;
    font-src 'self' data: *;
    media-src 'self' *;
    frame-src 'self' *;

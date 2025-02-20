@@ -8,7 +8,7 @@ export function ReactScan(): JSX.Element {
   useEffect(() => {
     scan({
       enabled: true,
-      highlight: true
+      // highlight: true
     });
   }, []);
 

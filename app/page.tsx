@@ -2,8 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout from './_components/Layout';
 import Schema from './_lib/Schema';
-import Script from "next/script"; 
-
+import Script from 'next/script';
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
         strategy="beforeInteractive"
       />
       {/* To-do:move to head */}
-      <Schema/>
+      <Schema />
       <Layout />
     </>
   );

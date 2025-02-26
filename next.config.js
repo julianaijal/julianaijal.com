@@ -1,4 +1,6 @@
-const { default: ReactComponentName } = require("react-scan/react-component-name/webpack");
+const {
+  default: ReactComponentName,
+} = require('react-scan/react-component-name/webpack');
 
 /** @type {import('next').NextConfig} */
 const cspHeader = `
@@ -10,26 +12,25 @@ const cspHeader = `
    font-src 'self' data: *;
    media-src 'self' *;
    frame-src 'self' *;
-`
+`;
 const stsHeader = `
   max-age=63072000;
   includeSubDomains; preload
-`
+`;
 
 const ppHeader = `
   camera=(),
   microphone=(),
   geolocation=()
-`
+`;
 const nextConfig = {
   images: {
     domains: ['media.graphassets.com'],
     formats: ['image/avif', 'image/webp'],
     quality: 85,
     minimumCacheTTL: 2592000,
-
   },
-  
+
   reactStrictMode: true,
   async headers() {
     return [
@@ -38,35 +39,35 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: cspHeader.replace(/\s+/g, ' ').trim()
+            value: cspHeader.replace(/\s+/g, ' ').trim(),
           },
           {
             key: 'Strict-Transport-Security',
-            value: stsHeader.replace(/\s+/g, ' ').trim()
+            value: stsHeader.replace(/\s+/g, ' ').trim(),
           },
           {
             key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin'
+            value: 'same-origin',
           },
           {
             key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',
-            value: 'nosniff'
+            value: 'nosniff',
           },
           {
             key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
+            value: 'strict-origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
-            value: ppHeader.replace(/\s+/g, ' ').trim()
-          }
-        ]
-      }
-    ]
+            value: ppHeader.replace(/\s+/g, ' ').trim(),
+          },
+        ],
+      },
+    ];
   },
   // React-scan
   //https://dashboard.react-scan.com/project
@@ -79,7 +80,7 @@ const nextConfig = {
 
   sassOptions: {
     // to do: fix dart sass warning
-    silenceDeprecations: ['legacy-js-api']
+    silenceDeprecations: ['legacy-js-api'],
   },
   images: {
     // Use remotePatterns to allow specific external images
@@ -99,6 +100,6 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,4 +1,3 @@
-const webp=require('webp-converter');
-
+const webp = require('webp-converter');
 
 webp.grant_permission();

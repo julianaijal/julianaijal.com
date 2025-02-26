@@ -1,6 +1,6 @@
-import styles from "../styles/ArticleList.module.scss";
-import { IArticleCollection } from "./_interfaces/interfaces";
-import ArticleListEntry from "./ArticleListEntry";
+import styles from '../styles/ArticleList.module.scss';
+import { IArticleCollection } from './_interfaces/interfaces';
+import ArticleListEntry from './ArticleListEntry';
 
 const ArticleList: React.FC<IArticleCollection> = ({ articles = [] }) => (
   <section className={styles.ArticleList}>

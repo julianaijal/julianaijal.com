@@ -3,31 +3,31 @@ const api = `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/${process.en
 const fetchGraphQL = async (query: string) => {
   try {
     const resp = await fetch(api, {
-      method: "POST",
-      headers: { 
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.HYGRAPH_AUTH_TOKEN}`
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.HYGRAPH_AUTH_TOKEN}`,
       },
       body: JSON.stringify({ query }),
       next: {
-        revalidate: 172800 // revalidate every two days
+        revalidate: 172800, // revalidate every two days
       },
     });
     if (!resp.ok) {
-      console.error("Failed to fetch data:", resp.statusText);
+      console.error('Failed to fetch data:', resp.statusText);
       throw new Error(`Network response was not ok: ${resp.statusText}`);
     }
     const data = await resp.json();
 
     if (!data.data) {
-      console.error("Invalid response format:", data);
-      throw new Error("Invalid response format");
+      console.error('Invalid response format:', data);
+      throw new Error('Invalid response format');
     }
 
     return data;
   } catch (error) {
-    console.error("Fetch error:", error);
-    if (process.env.NODE_ENV === "production") {
+    console.error('Fetch error:', error);
+    if (process.env.NODE_ENV === 'production') {
       return null;
     }
     throw error;
@@ -84,11 +84,11 @@ const fetchArticleBySlug = async (slug: string) => {
   const data = await fetchGraphQL(query);
 
   if (!data?.data?.articles || data.data.articles.length === 0) {
-    console.error("No article found with the provided slug:", slug);
-    if (process.env.NODE_ENV === "production") {
+    console.error('No article found with the provided slug:', slug);
+    if (process.env.NODE_ENV === 'production') {
       return null;
     }
-    throw new Error("Article not found");
+    throw new Error('Article not found');
   }
 
   return data.data.articles[0];

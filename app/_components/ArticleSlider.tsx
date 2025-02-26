@@ -1,7 +1,7 @@
-import styles from "../styles/ArticleSlider.module.scss";
-import { IArticleCollection } from "./_interfaces/interfaces";
-import { FC } from "react";
-import ArticleSliderEntry from "./ArticleSliderEntry";
+import styles from '../styles/ArticleSlider.module.scss';
+import { IArticleCollection } from './_interfaces/interfaces';
+import { FC } from 'react';
+import ArticleSliderEntry from './ArticleSliderEntry';
 
 const ArticleSlider: FC<IArticleCollection> = ({ articles = [] }) => {
   return (
@@ -14,8 +14,7 @@ const ArticleSlider: FC<IArticleCollection> = ({ articles = [] }) => {
       </div>
       <div className={styles.ArticleSliderEntries}>
         {articles.map((article, index) => (
-          <ArticleSliderEntry key={index} {...article}
-          />
+          <ArticleSliderEntry key={index} {...article} />
         ))}
       </div>
     </section>

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import styles from './../styles/Navbar.module.scss';
 import Image from 'next/image';
 import myLogo from '../../public/assets/julian-aijal-logo.svg';
@@ -10,12 +10,13 @@ const NavBar = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const handleScroll =  () =>{
-        setScroll(window.scrollY > 1)
-      }
+      const handleScroll = () => {
+        setScroll(window.scrollY > 1);
+      };
       window.addEventListener('scroll', handleScroll);
-      return () => {window.removeEventListener('scroll', handleScroll)}
-
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
   }, []);
   return (

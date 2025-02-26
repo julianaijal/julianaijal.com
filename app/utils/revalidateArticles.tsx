@@ -1,7 +1,9 @@
-"use server";
-import { revalidateTag } from "next/cache";
+'use server';
+import { revalidateTag } from 'next/cache';
 
-export async function revalidateArticles(tag: string = "external-articles-collection") {
+export async function revalidateArticles(
+  tag: string = 'external-articles-collection',
+) {
   try {
     revalidateTag(tag);
     console.log(`Cache revalidated for tag: ${tag}`);

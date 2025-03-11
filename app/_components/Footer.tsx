@@ -24,6 +24,16 @@ const socialLinks = [
     src: '/assets/icons/instagram.svg',
     title: 'Instagram',
   },
+  {
+    href: 'https://bsky.app/profile/julianaijal.com',
+    src: '/assets/icons/bluesky.svg',
+    title: 'Bluesky',
+  },
+  {
+    href: 'https://www.threads.net/@julian.aijal',
+    src: '/assets/icons/threads.svg',
+    title: 'Threads',
+  },
 ];
 
 const Footer = () => {

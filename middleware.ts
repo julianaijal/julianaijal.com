@@ -1,6 +1,6 @@
 // https://vercel.com/docs/functions/edge-middleware/quickstart
 import { NextRequest, NextResponse } from 'next/server';
-import { geolocation } from '@vercel/functions';
+import { geolocation } from '@vercel/edge';
  
 // The country to block from accessing the secret page
 const BLOCKED_COUNTRY = 'US';

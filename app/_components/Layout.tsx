@@ -4,12 +4,14 @@ import styles from '../styles/Home.module.scss';
 import { ArticleBlock, Hero, NavBar, Footer } from './';
 import apiFunctions from '../utils/api';
 import { IArticle } from './_interfaces/interfaces';
+import DOMPurify from 'dompurify';
+import html from 'html-react-parser';
+import { JSDOM } from 'jsdom';
 
 const Layout = async () => {
   const { data: postsData } = await apiFunctions.fetchPosts();
   const { data: articlesData } = await apiFunctions.fetchArticles();
   const { data: homeData } = await apiFunctions.fetchHome();
-
 
   const articlesHygraphData: IArticle[] =
     postsData?.externalPostsPluralized?.map(
@@ -22,12 +24,21 @@ const Layout = async () => {
       slug,
     })) ?? [];
 
+  const content = homeData?.homepages?.[0]?.intro?.html;
+  let parsedHtml = null;
+  if (content) {
+    const window = new JSDOM('').window;
+    const domPurify = DOMPurify(window);
+    const sanitizedHtml = domPurify.sanitize(content);
+    parsedHtml = html(sanitizedHtml);
+  }
+
   return (
     <>
       <NavBar />
       <main className={styles.main}>
         <Hero />
-        <p>{JSON.stringify(homeData)}</p>
+        {parsedHtml}
         <ArticleBlock articles={mappedArticles} />
       </main>
       <Footer />

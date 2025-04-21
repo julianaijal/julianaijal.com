@@ -60,12 +60,15 @@ const fetchPosts = async () => {
 const fetchHome = async () => {
   const query = `
   {
-  homepages(first: 1) {
-    intro {
-      raw
+    homepages(first: 1) {
+      intro {
+        raw
+        html
+        markdown
+        text
+      }
     }
-  }
-}`
+  }`
   const data = await fetchGraphQL(query);
   return data;
 }

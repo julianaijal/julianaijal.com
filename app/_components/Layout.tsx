@@ -10,14 +10,8 @@ import html from 'html-react-parser';
 import { JSDOM } from 'jsdom';
 
 const Layout = async () => {
-  const { data: postsData } = await apiFunctions.fetchPosts();
   const { data: articlesData } = await apiFunctions.fetchArticles();
   const { data: homeData } = await apiFunctions.fetchHome();
-
-  const articlesHygraphData: IArticle[] =
-    postsData?.externalPostsPluralized?.map(
-      ({ title, url, symbol }: IArticle) => ({ title, url, symbol }),
-    ) ?? [];
 
   const mappedArticles: IArticle[] =
     articlesData?.articles?.map(({ title, slug }: IArticle) => ({
@@ -39,9 +33,7 @@ const Layout = async () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
-        <section className={introCopyStyles.introCopy}>
-          {parsedHtml}
-        </section>
+        <section className={introCopyStyles.introCopy}>{parsedHtml}</section>
         <ArticleBlock articles={mappedArticles} />
       </main>
       <Footer />

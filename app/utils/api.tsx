@@ -57,6 +57,19 @@ const fetchPosts = async () => {
   return data || { data: { externalPostsPluralized: [] } };
 };
 
+const fetchHome = async () => {
+  const query = `
+  {
+  homepages(first: 1) {
+    intro {
+      raw
+    }
+  }
+}`
+  const data = await fetchGraphQL(query);
+  return data;
+}
+
 const fetchArticleBySlug = async (slug: string) => {
   const query = `{
     articles(where: { slug: "${slug}" }) {
@@ -98,6 +111,7 @@ const apiFunctions = {
   fetchPosts,
   fetchArticles,
   fetchArticleBySlug,
+  fetchHome,
 };
 
 export default apiFunctions;

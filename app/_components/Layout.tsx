@@ -8,6 +8,8 @@ import { IArticle } from './_interfaces/interfaces';
 const Layout = async () => {
   const { data: postsData } = await apiFunctions.fetchPosts();
   const { data: articlesData } = await apiFunctions.fetchArticles();
+  const { data: homeData } = await apiFunctions.fetchHome();
+
 
   const articlesHygraphData: IArticle[] =
     postsData?.externalPostsPluralized?.map(
@@ -25,6 +27,7 @@ const Layout = async () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
+        <p>{JSON.stringify(homeData)}</p>
         <ArticleBlock articles={mappedArticles} />
       </main>
       <Footer />

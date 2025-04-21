@@ -1,6 +1,7 @@
 'use server';
 
-import styles from '../styles/IntroCopy.module.scss';
+import styles from '../styles/Home.module.scss';
+import introCopyStyles from '../styles/IntroCopy.module.scss';
 import { ArticleBlock, Hero, NavBar, Footer } from './';
 import apiFunctions from '../utils/api';
 import { IArticle } from './_interfaces/interfaces';
@@ -38,7 +39,7 @@ const Layout = async () => {
       <NavBar />
       <main className={styles.main}>
         <Hero />
-        <section className={styles.introCopy}>
+        <section className={introCopyStyles.introCopy}>
           {parsedHtml}
         </section>
         <ArticleBlock articles={mappedArticles} />

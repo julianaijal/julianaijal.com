@@ -1,7 +1,9 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
 .introCopy {
-  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  padding: 2.5rem;
   margin: 2.5rem 0 3.5rem 0;
-  max-width: 700px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -11,6 +13,18 @@
   line-height: 27px;
   transition: box-shadow 0.2s;
 
+  @include mobile {
+    padding: 1.5rem;
+    margin: 1.5rem 0 2.5rem 0;
+  }
+
+  @include tablet {
+    max-width: 90%;
+  }
+
+  @include desktop {
+    max-width: 700px;
+  }
   a {
     color: #66bfff;
     text-decoration: underline;

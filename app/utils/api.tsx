@@ -60,7 +60,7 @@ const fetchPosts = async () => {
 const fetchHome = async () => {
   const query = `
   {
-    homepages(first: 1) {
+    homepages(first: 8) {
       intro {
         raw
         html

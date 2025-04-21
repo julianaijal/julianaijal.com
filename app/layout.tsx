@@ -9,7 +9,10 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'julianaijal.com',
-  description: 'Hallo met mij',
+  description: 'Hi, I’m Julian Aijal.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

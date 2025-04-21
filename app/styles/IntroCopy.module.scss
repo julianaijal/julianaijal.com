@@ -10,4 +10,20 @@
   font-weight: 400;
   line-height: 27px;
   transition: box-shadow 0.2s;
+
+  a {
+    color: #66bfff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  a:hover,
+  a:focus {
+    background: #6f39ff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+  }
 }

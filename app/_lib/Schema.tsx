@@ -1,4 +1,9 @@
-const Schema = () => {
+import apiFunctions from '../utils/api';
+
+const Schema = async () => {
+  const { data: homeData } = await apiFunctions.fetchHome();
+  const introContent = homeData?.homepages?.[0]?.intro?.html || "";
+  const introPlainText = introContent.replace(/<[^>]*>/g, '');
   return (
     <script
       type="application/ld+json"
@@ -12,6 +17,7 @@ const Schema = () => {
                 ],
                 "@id":"#Webpage",
                 "name":"Julian Aijal",
+                "description":"${introPlainText}",
                 "mainEntity":{
                    "@id":"#Person"
                 },
@@ -178,6 +184,7 @@ const Schema = () => {
                    "@type":"WebPage",
                    "@id":"https://julianaijal.com/",
                    "name":"Julian Aijal",
+                   "description":"${introPlainText}",
                    "publisher":{
                       "@id":"#Person"
                    },

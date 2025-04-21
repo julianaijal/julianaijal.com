@@ -1,0 +1,29 @@
+.introCopy {
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  margin: 2.5rem 0 3.5rem 0;
+  max-width: 700px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  transition: box-shadow 0.2s;
+
+  a {
+    color: #66bfff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  a:hover,
+  a:focus {
+    background: #6f39ff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+  }
+}

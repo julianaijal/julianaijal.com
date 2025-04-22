@@ -20,11 +20,6 @@ a {
   box-sizing: border-box;
 }
 
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
-//   }
-// }
 
 .wrapper {
   max-width: $max-width;
@@ -35,7 +30,7 @@ a {
     padding: 4rem;
   }
   
-  @include large-screen {
+  @include desktop {
     padding: 2rem;
   }
 }

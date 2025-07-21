@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
-import { onCLS, onFID, onLCP, onINP } from 'web-vitals/attribution';
+import { onCLS, onLCP, onINP } from 'web-vitals/attribution';
 
 declare var gtag: Function;
 
@@ -35,9 +35,7 @@ const WebVitals = () => {
         case 'CLS':
           eventParams.debug_target = attribution.largestShiftTarget;
           break;
-        case 'FID':
-          eventParams.debug_target = attribution.eventTarget;
-          break;
+
         case 'INP':
           eventParams.debug_target = attribution.eventTarget;
           break;
@@ -52,7 +50,7 @@ const WebVitals = () => {
 
   useEffect(() => {
     onCLS(sendToGoogleAnalytics);
-    onFID(sendToGoogleAnalytics);
+
     onLCP(sendToGoogleAnalytics);
     onINP(sendToGoogleAnalytics);
   }, []);

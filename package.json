@@ -16,6 +16,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "html-react-parser": "^5.2.3",
     "isomorphic-dompurify": "^2.26.0",
+    "jsdom": "^26.1.0",
     "next": "^15.3.4",
     "prettier": "^3.5.3",
     "react": "^18.3.1",
@@ -29,6 +30,7 @@
     "webp-converter": "^2.3.3"
   },
   "devDependencies": {
+    "@types/jsdom": "^21.1.7",
     "@types/node": "22.15.3",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.2.7",

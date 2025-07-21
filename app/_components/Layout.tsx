@@ -5,9 +5,8 @@ import introCopyStyles from '../styles/IntroCopy.module.scss';
 import { ArticleBlock, Hero, NavBar, Footer } from './';
 import apiFunctions from '../utils/api';
 import { IArticle } from './_interfaces/interfaces';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import html from 'html-react-parser';
-import { JSDOM } from 'jsdom';
 
 const Layout = async () => {
   const { data: articlesData } = await apiFunctions.fetchArticles();
@@ -22,9 +21,7 @@ const Layout = async () => {
   const content = homeData?.homepages?.[0]?.intro?.html;
   let parsedHtml = null;
   if (content) {
-    const window = new JSDOM('').window;
-    const domPurify = DOMPurify(window);
-    const sanitizedHtml = domPurify.sanitize(content);
+    const sanitizedHtml = DOMPurify.sanitize(content);
     parsedHtml = html(sanitizedHtml);
   }
 

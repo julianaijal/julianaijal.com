@@ -1,0 +1,8 @@
+# Julian Aijal's Personal Website and Blog
+
+> My personal website and blog, built with modern web technologies. This site showcases my projects, and hosts articles on web development, technology, and more.
+
+## Main Pages
+
+- [Homepage](https://julianaijal.com/): The main landing page of the site.
+- [Articles](https://julianaijal.com/articles): A collection of my blog posts and articles.

@@ -12,6 +12,13 @@ const getArticleData = async (slug: string) => {
   return data;
 };
 
+export async function generateStaticParams() {
+  const data = await apiFunctions.fetchArticles();
+  return (data?.data?.articles ?? []).map((article: { slug: string }) => ({
+    slug: article.slug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {

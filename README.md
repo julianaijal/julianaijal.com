@@ -27,10 +27,10 @@ My personal website and blog, built with modern web technologies.
 
 ## 🛠️ Built With
 
-- **Core:** Next.js 15, TypeScript, SASS
-- **Content:** Hygraph CMS, Vercel Postgres
+- **Core:** Next.js 15, React 19, TypeScript 5.7, SASS
+- **Content:** Hygraph CMS (GraphQL API)
 - **Analytics:** Vercel Analytics, Speed Insights, Google Analytics 4, Google Tag Manager
-- **Performance:** React Scan component monitoring
+- **Performance:** Web Vitals monitoring, image optimization (AVIF/WebP)
 - **Infrastructure:** Vercel Platform
 - **Code Quality:** ESLint, TypeScript
 
@@ -48,8 +48,8 @@ cd julianaijal.com
 # Install dependencies
 npm install
 
-# Set up environment variables
-cp .env.example .env.local  # Then edit with your values
+# Set up environment variables (requires Hygraph CMS credentials)
+cp .env.example .env.local  # Add HYGRAPH_API_KEY and HYGRAPH_AUTH_TOKEN
 
 # Start development server
 npm run dev
@@ -70,15 +70,13 @@ npm run generate-sitemap # Generate sitemap
 ## 📝 Project Structure
 
 ```
-/app                 # Next.js app directory
-  /_components       # Shared components
-  /_hooks           # Shared hooks
-  /_lib             # Utility functions
-  /articles         # Article pages
-  /hooks            # App hooks
-  /styles           # Global styles
-  /types            # TypeScript types
-  /utils            # Utility functions
+/app                 # Next.js 15 App Router
+  /_components       # UI components (Hero, NavBar, ArticleSlider, etc.)
+  /_lib             # Core utilities (Schema.org, WebVitals)
+  /articles         # Dynamic article routes with [slug]
+  /hooks            # Custom React hooks
+  /styles           # Global SASS stylesheets
+  /utils            # API integration (Hygraph CMS)
 /config             # Configuration files
 /public             # Static assets
 /scripts            # Build scripts (sitemap generation)
@@ -89,9 +87,9 @@ npm run generate-sitemap # Generate sitemap
 The site is optimized for performance and SEO:
 
 - Vercel Analytics and Speed Insights integration
-- React Scan for component monitoring
-- Server-side rendering with Next.js
-- Optimized images with webp-converter
+- Web Vitals monitoring and performance tracking
+- Server-side rendering with Next.js App Router
+- Optimized images with AVIF/WebP formats
 - Automated sitemap generation
 
 ## 🌐 Deployment

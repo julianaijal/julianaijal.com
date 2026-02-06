@@ -20,7 +20,7 @@ npm run generate-sitemap # Generate sitemap only
 
 ### Data Flow
 
-Content is fetched from Hygraph CMS via GraphQL (`app/utils/api.tsx`). Four main fetch functions: `fetchArticles()`, `fetchPosts()`, `fetchHome()`, `fetchArticleBySlug(slug)`. Server-side fetching with 2-day (172800s) revalidation cache. HTML content from the CMS is sanitized with `isomorphic-dompurify` before rendering.
+Content is fetched from Hygraph CMS via GraphQL (`app/utils/api.tsx`). Four main fetch functions: `fetchArticles()`, `fetchPosts()`, `fetchHome()`, `fetchArticleBySlug(slug)`. Server-side fetching with 1-month (2592000s) revalidation cache. HTML content from the CMS is sanitized with `isomorphic-dompurify` before rendering.
 
 ### Routing
 

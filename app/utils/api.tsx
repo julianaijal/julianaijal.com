@@ -39,6 +39,12 @@ const fetchArticles = async () => {
     articles {
       title
       slug
+      subtitle
+      headerImage {
+        url
+        width
+        height
+      }
     }
   }`;
   const data = await fetchGraphQL(query);

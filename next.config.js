@@ -1,14 +1,10 @@
-const {
-  default: ReactComponentName,
-} = require('react-scan/react-component-name/webpack');
-
 /** @type {import('next').NextConfig} */
 const cspHeader = `
    default-src 'self';
    img-src 'self' data: blob: *;
-   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.unpkg.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com *.vercel.live *.react-scan.com;
+   script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms *.vercel-scripts.com va.vercel-scripts.com *.vercel.live;
    style-src 'self' 'unsafe-inline';
-   connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms *.react-scan.com;
+   connect-src 'self' *.vercel-insights.com *.google-analytics.com *.clarity.ms;
    font-src 'self' data: *;
    media-src 'self' *;
    frame-src 'self' *;
@@ -24,13 +20,6 @@ const ppHeader = `
   geolocation=()
 `;
 const nextConfig = {
-  images: {
-    domains: ['media.graphassets.com'],
-    formats: ['image/avif', 'image/webp'],
-    quality: 85,
-    minimumCacheTTL: 2592000,
-  },
-
   reactStrictMode: true,
   async headers() {
     return [
@@ -69,21 +58,14 @@ const nextConfig = {
       },
     ];
   },
-  // React-scan
-  //https://dashboard.react-scan.com/project
-  webpack: (config) => {
-    if (process.env.NODE_ENV === 'production') {
-      config.plugins.push(ReactComponentName({}));
-    }
-    return config;
-  },
 
   sassOptions: {
     // to do: fix dart sass warning
     silenceDeprecations: ['legacy-js-api'],
   },
   images: {
-    // Use remotePatterns to allow specific external images
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 2592000,
     remotePatterns: [
       {
         protocol: 'https',
@@ -96,7 +78,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    // Enable SVG images and allow dangerous SVGs
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },

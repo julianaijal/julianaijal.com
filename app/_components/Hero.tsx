@@ -5,7 +5,7 @@ import Image from 'next/image';
 import myIllustration from '../../public/assets/julian.svg';
 import { Button } from '.';
 import useInViewFade from '../hooks/useInViewFade';
-import { ReactScan } from '../_lib/ReactScan';
+
 const Hero = () => {
   const { ref, isVisible, targetEl } = useInViewFade();
 
@@ -49,43 +49,40 @@ const Hero = () => {
   }, [text, isDeleting, wordIndex, words]);
 
   return (
-    <>
-      <ReactScan />
-      <section className={styles.HeroGrid}>
-        <div className={styles.Hero__cta}>
-          <h1
-            ref={(el) => {
-              ref(el);
-              targetEl.current = el;
-            }}
-            className={`${styles.title} ${
-              isVisible ? styles.fadeInText : styles.hiddenText
-            }`}
-          >
-            Hi, I&apos;m <span className={styles.name}>Julian</span>, <br />{' '}
-            {text}
-            <span className={styles.cursor}>|</span>
-          </h1>
-          <Button />
-        </div>
-        <div className={styles.Hero__visual}>
-          <Image
-            alt="julian aijal"
-            src={myIllustration}
-            priority={true}
-            width={800}
-            height={600}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-            quality={85}
-            style={{
-              width: '100%',
-              height: 'auto',
-              maxWidth: '800px',
-            }}
-          />
-        </div>
-      </section>
-    </>
+    <section className={styles.HeroGrid}>
+      <div className={styles.Hero__cta}>
+        <h1
+          ref={(el) => {
+            ref(el);
+            targetEl.current = el;
+          }}
+          className={`${styles.title} ${
+            isVisible ? styles.fadeInText : styles.hiddenText
+          }`}
+        >
+          Hi, I&apos;m <span className={styles.name}>Julian</span>, <br />{' '}
+          {text}
+          <span className={styles.cursor}>|</span>
+        </h1>
+        <Button />
+      </div>
+      <div className={styles.Hero__visual}>
+        <Image
+          alt="julian aijal"
+          src={myIllustration}
+          priority={true}
+          width={800}
+          height={600}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+          quality={85}
+          style={{
+            width: '100%',
+            height: 'auto',
+            maxWidth: '800px',
+          }}
+        />
+      </div>
+    </section>
   );
 };
 

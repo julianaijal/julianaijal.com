@@ -3,21 +3,26 @@ import styles from './../styles/Navbar.module.scss';
 import Image from 'next/image';
 import myLogo from '../../public/assets/julian-aijal-logo.svg';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const NavBar = () => {
   const [scroll, setScroll] = useState(false);
+  const ticking = useRef(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleScroll = () => {
-        setScroll(window.scrollY > 1);
-      };
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
+    const handleScroll = () => {
+      if (!ticking.current) {
+        requestAnimationFrame(() => {
+          setScroll(window.scrollY > 1);
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
   return (
     <nav className={`${styles.nav} ${scroll && styles.nav__scrolled}`}>

@@ -1,9 +1,8 @@
 import { NavBar, Footer } from '../../_components';
 import styles from '../../styles/Article.module.scss';
 import apiFunctions from '../../utils/api';
-import DOMPurify from 'dompurify';
-import html from 'html-react-parser';
-import { JSDOM } from 'jsdom';
+import DOMPurify from 'isomorphic-dompurify';
+import html, { DOMNode, Element, domToReact } from 'html-react-parser';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import SchemaArticle from '../../_lib/SchemaArticle';
@@ -35,18 +34,34 @@ export async function generateMetadata({
   return metadata;
 }
 
+const replaceImgWithNextImage = {
+  replace: (domNode: DOMNode) => {
+    if (domNode instanceof Element && domNode.name === 'img') {
+      const { src, alt, width, height } = domNode.attribs;
+      if (!src) return;
+      return (
+        <Image
+          src={src}
+          alt={alt || ''}
+          width={parseInt(width, 10) || 800}
+          height={parseInt(height, 10) || 600}
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1080px) 80vw, 800px"
+          style={{ width: '100%', height: 'auto' }}
+        />
+      );
+    }
+  },
+};
+
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-  // to-do: lazy load images / change img tags to next/image
   try {
     const data = await getArticleData(slug);
     const content = data.content.html;
     const headerImg = data.headerImage.url;
-    console.log(headerImg);
-    const window = new JSDOM('').window;
-    const domPurify = DOMPurify(window);
-    const sanitizedHtml = domPurify.sanitize(content);
-    const parsedHtml = html(sanitizedHtml);
+    const sanitizedHtml = DOMPurify.sanitize(content);
+    const parsedHtml = html(sanitizedHtml, replaceImgWithNextImage);
     return (
       <>
         <SchemaArticle

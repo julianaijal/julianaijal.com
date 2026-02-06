@@ -1,0 +1,17 @@
+@import 'utils/variables';
+
+.mobileOnly {
+  display: block;
+
+  @media screen and (min-width: $tablet-min) {
+    display: none;
+  }
+}
+
+.desktopOnly {
+  display: none;
+
+  @media screen and (min-width: $tablet-min) {
+    display: block;
+  }
+}

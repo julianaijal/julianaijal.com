@@ -13,7 +13,7 @@ const NavBar = () => {
       const handleScroll = () => {
         setScroll(window.scrollY > 1);
       };
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll, { passive: true });
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
@@ -26,7 +26,7 @@ const NavBar = () => {
           <Image
             alt="julian aijal"
             src={myLogo}
-            sizes="100vw"
+            sizes="200px"
             style={{
               width: '100%',
               height: '2rem',

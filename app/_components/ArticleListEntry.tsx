@@ -13,7 +13,7 @@ const ArticleListEntry: FC<IArticle> = ({ title, slug }) => {
         <Image
           alt={title}
           src="https://eu-central-1-shared-euc1-02.graphassets.com/clw38qc4e0h4s07waaosde8sy/clw3wfy1r36ak08usvt8aamla"
-          sizes="100vw"
+          sizes="48px"
           width={48}
           height={48}
         />

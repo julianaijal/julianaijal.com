@@ -52,8 +52,7 @@ const Footer = () => {
         <Image
           alt="Julian Aijal logo"
           src={Logo}
-          sizes="100vw"
-          priority
+          sizes="200px"
           style={{
             width: '100%',
             height: '2rem',

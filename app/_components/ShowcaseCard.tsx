@@ -12,6 +12,7 @@ const ShowcaseCard: FC<IShowcaseEntry> = (entries) => {
           src="https://placehold.co/600x400?text=kthnxbye"
           height={185}
           width={328}
+          loading="lazy"
         />
       </div>
       <div className={styles.ShowcaseCardCta}>

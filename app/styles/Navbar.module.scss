@@ -27,11 +27,11 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 2rem;
   }
 
   &__item {
     display: flex;
-    width: 5.625rem;
     height: 1.375rem;
     align-items: center;
     white-space: nowrap;

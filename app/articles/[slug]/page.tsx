@@ -32,11 +32,11 @@ export async function generateMetadata({
     description: data?.subtitle || '',
   };
 
-  if (data?.canonicalReference && data?.canonicalLink) {
-    metadata.alternates = {
-      canonical: data.canonicalLink,
-    };
-  }
+  metadata.alternates = {
+    canonical: data?.canonicalReference && data?.canonicalLink
+      ? data.canonicalLink
+      : `https://julianaijal.com/articles/${slug}`,
+  };
 
   return metadata;
 }

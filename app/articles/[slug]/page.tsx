@@ -100,7 +100,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             </div>
           )}
           <div className={styles.ArticleWrapper}>
-            {data?.canonicalReference && data?.canonicalLink && (
+            {data?.canonicalReference && data?.canonicalLink ? (
               <p className={styles.ArticleCanonical}>
                 This article was originally published at{' '}
                 <a
@@ -111,7 +111,15 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                   {new URL(data.canonicalLink).hostname}
                 </a>
               </p>
-            )}
+            ) : data?.publishedAt ? (
+              <p className={styles.ArticlePublished}>
+                {new Date(data.publishedAt).toLocaleDateString('en-GB', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </p>
+            ) : null}
             <article className={`wrapper ${styles.ArticleContent}`}>
               <section className={styles.ArticleContentInner}>
                 {parsedHtml}

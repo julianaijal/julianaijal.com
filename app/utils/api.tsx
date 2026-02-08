@@ -36,7 +36,7 @@ const fetchGraphQL = async (query: string) => {
 
 const fetchArticles = async () => {
   const query = `{
-    articles {
+    articles(orderBy: publishedAt_DESC) {
       title
       slug
       subtitle

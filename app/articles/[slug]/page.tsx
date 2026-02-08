@@ -38,6 +38,20 @@ export async function generateMetadata({
       : `https://julianaijal.com/articles/${slug}`,
   };
 
+  if (data?.headerImage?.url) {
+    metadata.openGraph = {
+      title: data.title,
+      description: data.subtitle || '',
+      images: [{ url: data.headerImage.url, width: data.headerImage.width, height: data.headerImage.height }],
+    };
+    metadata.twitter = {
+      card: 'summary_large_image',
+      title: data.title,
+      description: data.subtitle || '',
+      images: [data.headerImage.url],
+    };
+  }
+
   return metadata;
 }
 

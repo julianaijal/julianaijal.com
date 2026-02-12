@@ -54,6 +54,7 @@ export interface ISchemaArticle {
     width: number;
     height: number;
   };
+  createdAt?: string;
   canonicalReference?: string;
   canonicalLink?: string;
 }

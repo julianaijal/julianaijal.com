@@ -18,6 +18,7 @@ const SchemaArticle = ({
   subtitle,
   content,
   headerImage,
+  createdAt,
   canonicalLink,
   createdBy,
   slug,
@@ -56,6 +57,7 @@ const SchemaArticle = ({
             ? decodeEscapedChars(stripHtmlTags(content.text))
             : '',
           image: imageObject,
+          datePublished: createdAt || undefined,
           author: authorObject,
           mainEntityOfPage: {
             '@type': 'WebPage',

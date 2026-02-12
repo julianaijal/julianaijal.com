@@ -91,6 +91,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           content={data.content}
           headerImage={data.headerImage}
           canonicalReference={data.canonicalReference}
+          createdAt={data.createdAt}
           canonicalLink={data.canonicalLink}
           slug={slug}
           createdBy={data.createdBy}

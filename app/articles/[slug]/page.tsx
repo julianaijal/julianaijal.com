@@ -125,9 +125,9 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                   {new URL(data.canonicalLink).hostname}
                 </a>
               </p>
-            ) : data?.publishedAt ? (
+            ) : data?.createdAt ? (
               <p className={styles.ArticlePublished}>
-                {new Date(data.publishedAt).toLocaleDateString('en-GB', {
+                {new Date(data.createdAt).toLocaleDateString('en-GB', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',

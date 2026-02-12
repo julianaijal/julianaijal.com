@@ -94,7 +94,7 @@ const fetchArticleBySlug = async (slug: string) => {
         width
         height
       }
-      publishedAt
+      createdAt
       canonicalReference
       canonicalLink
       content {

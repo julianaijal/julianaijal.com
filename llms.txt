@@ -6,3 +6,7 @@
 
 - [Homepage](https://julianaijal.com/): The main landing page of the site.
 - [Articles](https://julianaijal.com/articles): A collection of my blog posts and articles.
+
+## Markdown for Agents
+
+All pages support content negotiation. Request with `Accept: text/markdown` to receive clean markdown instead of HTML.

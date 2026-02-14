@@ -21,6 +21,27 @@ const ppHeader = `
 `;
 const nextConfig = {
   reactStrictMode: true,
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/',
+          has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+          destination: '/api/markdown',
+        },
+        {
+          source: '/articles',
+          has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+          destination: '/api/markdown/articles',
+        },
+        {
+          source: '/articles/:slug',
+          has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+          destination: '/api/markdown/articles/:slug',
+        },
+      ],
+    };
+  },
   async headers() {
     return [
       {

@@ -24,6 +24,7 @@ My personal website and blog, built with modern web technologies.
 - Optimized performance and SEO
 - Analytics and insights tracking
 - Automated deployments
+- Markdown for Agents — serves markdown to AI agents via `Accept: text/markdown` content negotiation
 
 ## 🛠️ Built With
 

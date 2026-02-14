@@ -42,5 +42,18 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/articles', '/articles/:slug*'],
+  matcher: [
+    {
+      source: '/',
+      has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+    },
+    {
+      source: '/articles',
+      has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+    },
+    {
+      source: '/articles/:slug*',
+      has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }],
+    },
+  ],
 };

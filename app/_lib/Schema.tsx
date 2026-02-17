@@ -53,7 +53,8 @@ const Schema = async () => {
           "https://www.crunchbase.com/person/julian-aijal",
           "https://substack.com/@julianaijal",
           "https://www.credential.net/profile/julianaijal489646/wallet",
-          "https://bsky.app/profile/julianaijal.com"
+          "https://bsky.app/profile/julianaijal.com",
+          "https://www.tiktok.com/@julianaijal"
         ],
         hasCredential: [
           {

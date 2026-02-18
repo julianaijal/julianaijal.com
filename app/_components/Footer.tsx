@@ -34,6 +34,11 @@ const socialLinks = [
     src: '/assets/icons/threads.svg',
     title: 'Threads',
   },
+  {
+    href: 'https://www.tiktok.com/@julianaijal',
+    src: '/assets/icons/tiktok.svg',
+    title: 'TikTok',
+  },
 ];
 
 const Footer = () => {

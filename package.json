@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^16.2.2",
-    "@vercel/analytics": "^1.6.1",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^1.2.0",
     "html-react-parser": "^5.2.17",
     "isomorphic-dompurify": "^2.26.0",

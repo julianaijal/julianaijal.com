@@ -1,4 +1,16 @@
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: *
-Content-signal: search=no, ai-train=no
+Content-signal: search=yes, ai-train=no
 Allow: /
 Sitemap: https://julianaijal.com/sitemap.xml

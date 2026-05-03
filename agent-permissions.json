@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "site": "https://julianaijal.com",
+  "defaultPolicy": "allow-read",
+  "training": {
+    "allowed": false
+  },
+  "inputUse": {
+    "allowed": true
+  },
+  "routes": [
+    {
+      "pattern": "/",
+      "methods": ["GET", "HEAD"],
+      "formats": ["text/html", "text/markdown"]
+    },
+    {
+      "pattern": "/articles",
+      "methods": ["GET", "HEAD"],
+      "formats": ["text/html", "text/markdown"]
+    },
+    {
+      "pattern": "/articles/:slug",
+      "methods": ["GET", "HEAD"],
+      "formats": ["text/html", "text/markdown"]
+    },
+    {
+      "pattern": "/api/markdown",
+      "methods": ["GET", "HEAD"],
+      "formats": ["text/markdown"]
+    },
+    {
+      "pattern": "/api/markdown/articles",
+      "methods": ["GET", "HEAD"],
+      "formats": ["text/markdown"]
+    },
+    {
+      "pattern": "/api/markdown/articles/:slug",
+      "methods": ["GET", "HEAD"],
+      "formats": ["text/markdown"]
+    }
+  ],
+  "rateLimits": {
+    "guidance": "Keep requests modest and cache results when possible.",
+    "requestsPerMinute": 30,
+    "concurrentRequests": 2
+  },
+  "contact": "mailto:hello@julianaijal.com"
+}

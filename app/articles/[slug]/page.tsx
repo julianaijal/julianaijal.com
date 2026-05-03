@@ -100,9 +100,6 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <main className={styles.Article}>
           <header>
             <h1 className={styles.ArticleTitle}>{data?.title}</h1>
-            <p className={styles.ArticleAgentLink}>
-              <a href={`/api/markdown/articles/${slug}`}>View raw markdown</a>
-            </p>
           </header>
           {headerImg && (
             <div className={styles.ArticleHeaderImage}>

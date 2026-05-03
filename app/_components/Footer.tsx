@@ -84,9 +84,7 @@ const Footer = () => {
       </nav>
 
       <nav className={styles.footer__resources} aria-label="Agent resources">
-        <Link href="/llms.txt">llms.txt</Link>
-        <Link href="/AGENTS.md">AGENTS.md</Link>
-        <Link href="/skill.md">skill.md</Link>
+        <Link href="/llms.txt">For agents</Link>
       </nav>
     </footer>
   );

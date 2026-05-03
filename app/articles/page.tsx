@@ -8,6 +8,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Articles | Julian Aijal',
   description: 'Articles written by Julian Aijal',
+  alternates: {
+    canonical: '/articles',
+  },
 };
 
 interface Article {
@@ -31,6 +34,10 @@ const Page = async () => {
       <main className={styles.Articles}>
         <header className={styles.ArticlesHeader}>
           <h1 className={styles.ArticlesTitle}>Articles</h1>
+          <p className={styles.ArticlesSubtitle}>
+            Prefer a compact agent-readable version?{' '}
+            <Link href="/api/markdown/articles">Open the markdown feed</Link>.
+          </p>
         </header>
         <div className={styles.ArticlesGrid}>
           {articles.map((article, index) => (

@@ -6,7 +6,16 @@
 
 - [Homepage](https://julianaijal.com/): The main landing page of the site.
 - [Articles](https://julianaijal.com/articles): A collection of my blog posts and articles.
+- [Agent guide](https://julianaijal.com/AGENTS.md): Project context and agent access notes.
+- [Capability file](https://julianaijal.com/skill.md): High-level summary of markdown access capabilities.
+- [Agent permissions](https://julianaijal.com/agent-permissions.json): Read policy and rate-limit guidance.
 
 ## Markdown for Agents
 
 All pages support content negotiation. Request with `Accept: text/markdown` to receive clean markdown instead of HTML.
+
+Direct raw markdown endpoints:
+
+- [Homepage markdown](https://julianaijal.com/api/markdown)
+- [Articles markdown](https://julianaijal.com/api/markdown/articles)
+- [Article markdown](https://julianaijal.com/api/markdown/articles/[slug])

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build && npm run generate-sitemap",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "generate-sitemap": "ts-node scripts/sitemap.js"
   },
   "dependencies": {
@@ -15,7 +15,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "html-react-parser": "^6.1.5",
     "isomorphic-dompurify": "^2.26.0",
-    "next": "^15.5.18",
+    "next": "^16.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.2.4",
     "react-intersection-observer": "^10.0.3",
@@ -35,6 +35,9 @@
   },
   "overrides": {
     "brace-expansion": "5.0.8",
+    "minimatch@3.1.5": {
+      "brace-expansion": "2.0.2"
+    },
     "postcss": "8.5.23",
     "sharp": "0.35.3"
   }

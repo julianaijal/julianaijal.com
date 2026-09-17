@@ -1,5 +1,5 @@
-@import 'utils/variables';
-@import 'utils/mixins';
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
 
 .Articles {
   padding: 0 9.75rem;

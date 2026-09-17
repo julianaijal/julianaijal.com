@@ -1,4 +1,5 @@
-@import 'utils/variables';
+@use 'utils/variables' as *;
+@use 'utils/mixins' as *;
 
 .mobileOnly {
   display: block;

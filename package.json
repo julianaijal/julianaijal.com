@@ -7,20 +7,20 @@
     "build": "next build && npm run generate-sitemap",
     "start": "next start",
     "lint": "eslint .",
-    "generate-sitemap": "ts-node scripts/sitemap.js"
+    "generate-sitemap": "node scripts/sitemap.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^1.2.0",
     "html-react-parser": "^6.1.5",
-    "isomorphic-dompurify": "^4.1.0",
+    "isomorphic-dompurify": "^2.26.0",
     "next": "^16.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.2.4",
     "react-intersection-observer": "^10.0.3",
     "sass": "^1.100.0",
-    "sitemap": "^9.0.0",
+    "sitemap": "^9.0.1",
     "web-vitals": "^6.0.1"
   },
   "devDependencies": {

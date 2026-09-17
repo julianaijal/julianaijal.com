@@ -1,7 +1,12 @@
-const { SitemapStream, streamToPromise, EnumChangefreq } = require('sitemap');
-const { Readable } = require('stream');
-const fs = require('fs');
-const path = require('path');
+import { SitemapStream, streamToPromise, EnumChangefreq } from 'sitemap';
+import { Readable } from 'stream';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const links = [{ url: '/', changefreq: EnumChangefreq.DAILY, priority: 1.0 }];
 const generateSitemap = async () => {
   const publicDir = path.join(process.cwd(), 'public');
@@ -21,4 +26,4 @@ const generateSitemap = async () => {
   console.log('Sitemap written to:', sitemapPath);
 };
 
-module.exports = generateSitemap;
+generateSitemap();

@@ -26,14 +26,16 @@
   }
 
   &Title {
-    font-size: 2.5rem;
+    // grows at 1% of screen width from 2rem to 3rem as viewport grows with 3rem max
+    font-size:clamp(2rem, 2rem + 1vw, 3rem);
+    // font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
     text-align: center;
     
     @include desktop {
-      font-size: 3rem;
+      // font-size: 3rem;
     }
   }
 
